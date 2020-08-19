@@ -26,11 +26,23 @@ A data frame with 452 rows and 19 variables:
 \item{Email}{Email address of the DC}
 \item{WebsiteURL}{URL of the DC's non government page}
 \item{DCProjectPageURL}{URL of the DC's page listing on Hong Kong Districts Info}
+\item{ElectionYear}{Year when the DC is elected}
+\item{ElectionDate}{Date when the DC is elected}
+\item{CandidateNum}{Candidate number of the DC when elected}
+\item{Occupation}{Occupation of the DC when elected}
+\item{Political}{Political Party of the DC when elected}
+\item{Camp}{Political leaning/camp of the DC when elected}
+\item{Vote}{Number of votes won}
+\item{VotePercentage}{Share of vote}
+\item{Gender}{Gender of the DC}
+\item{Tag}{Granualar political leaning/camp of the DC when elected}
 ...
 }
 }
 \source{
 \url{https://www.districtcouncils.gov.hk}
+
+\url{https://dce2019.hk01.com/}
 }
 \usage{
 hkdc
