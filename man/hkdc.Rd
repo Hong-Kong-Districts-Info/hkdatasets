@@ -5,7 +5,7 @@
 \alias{hkdc}
 \title{Dataset with public domain information on Hong Kong District Councillors (elected 2019).}
 \format{
-A data frame with 452 rows and 19 variables:
+A data frame with 452 rows and 29 variables:
 \describe{
 \item{ConstituencyCode}{Constituency code for the District Council}
 \item{Constituency_ZH}{Constituency name in Chinese}
