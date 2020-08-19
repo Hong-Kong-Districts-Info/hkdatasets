@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dataset with public domain information on Hong Kong District Councillors (elected 2019). — hkdc • hkdatasets</title>
+<title>Dataset of vehicles involved in collisions between 2014 and 2019. — hk_vehicles • hkdatasets</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,9 @@
 
 
 
-<meta property="og:title" content="Dataset with public domain information on Hong Kong District Councillors (elected 2019). — hkdc" />
-<meta property="og:description" content="A dataset containing public domain information of the 452 Hong Kong District Councillors
-elected in 2019." />
+<meta property="og:title" content="Dataset of vehicles involved in collisions between 2014 and 2019. — hk_vehicles" />
+<meta property="og:description" content="A dataset containing information of collisions by vehicles between 2014
+and 2019." />
 
 
 
@@ -104,59 +104,37 @@ elected in 2019." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Dataset with public domain information on Hong Kong District Councillors (elected 2019).</h1>
+    <h1>Dataset of vehicles involved in collisions between 2014 and 2019.</h1>
     
-    <div class="hidden name"><code>hkdc.Rd</code></div>
+    <div class="hidden name"><code>hk_vehicles.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataset containing public domain information of the 452 Hong Kong District Councillors
-elected in 2019.</p>
+    <p>A dataset containing information of collisions by vehicles between 2014
+and 2019.</p>
     </div>
 
-    <pre class="usage"><span class='no'>hkdc</span></pre>
+    <pre class="usage"><span class='no'>hk_vehicles</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 452 rows and 29 variables:</p><dl'>
-<dt>ConstituencyCode</dt><dd><p>Constituency code for the District Council</p></dd>
-<dt>Constituency_ZH</dt><dd><p>Constituency name in Chinese</p></dd>
-<dt>Constituency_EN</dt><dd><p>Constituency name in English</p></dd>
-<dt>District_ZH</dt><dd><p>District name in Chinese</p></dd>
-<dt>District_EN</dt><dd><p>District name in English</p></dd>
-<dt>Region_ZH</dt><dd><p>Region name in Chinese</p></dd>
-<dt>Region_EN</dt><dd><p>Region name in English</p></dd>
-<dt>Party_ZH</dt><dd><p>Party name in Chinese</p></dd>
-<dt>Party_EN</dt><dd><p>Party name in English</p></dd>
-<dt>DC_ZH</dt><dd><p>District Councillor name in Chinese</p></dd>
-<dt>DC_EN</dt><dd><p>District Councillor name in English</p></dd>
-<dt>FacebookURL</dt><dd><p>URL of the DC's Facebook Page</p></dd>
-<dt>DCPageURL</dt><dd><p>URL of the DC's official page</p></dd>
-<dt>Address</dt><dd><p>Office address of the DC</p></dd>
-<dt>Phone</dt><dd><p>Phone number of the DC</p></dd>
-<dt>Fax</dt><dd><p>Fax number of the DC</p></dd>
-<dt>Email</dt><dd><p>Email address of the DC</p></dd>
-<dt>WebsiteURL</dt><dd><p>URL of the DC's non government page</p></dd>
-<dt>DCProjectPageURL</dt><dd><p>URL of the DC's page listing on Hong Kong Districts Info</p></dd>
-<dt>ElectionYear</dt><dd><p>Year when the DC is elected</p></dd>
-<dt>ElectionDate</dt><dd><p>Date when the DC is elected</p></dd>
-<dt>CandidateNum</dt><dd><p>Candidate number of the DC when elected</p></dd>
-<dt>Occupation</dt><dd><p>Occupation of the DC when elected</p></dd>
-<dt>Political</dt><dd><p>Political Party of the DC when elected</p></dd>
-<dt>Camp</dt><dd><p>Political leaning/camp of the DC when elected</p></dd>
-<dt>Vote</dt><dd><p>Number of votes won</p></dd>
-<dt>VotePercentage</dt><dd><p>Share of vote</p></dd>
-<dt>Gender</dt><dd><p>Gender of the DC</p></dd>
-<dt>Tag</dt><dd><p>Granualar political leaning/camp of the DC when elected</p></dd>
+    <p>A data frame with 153062 rows and 8 variables:</p><dl'>
+<dt>OBJECTID</dt><dd><p></p></dd>
+<dt>Year</dt><dd><p></p></dd>
+<dt>Serial_No_</dt><dd><p></p></dd>
+<dt>Driver_Age</dt><dd><p></p></dd>
+<dt>Driver_Sex</dt><dd><p></p></dd>
+<dt>Year_of_Manufacture</dt><dd><p></p></dd>
+<dt>Severity_of_Accident</dt><dd><p></p></dd>
+<dt>Vehicle_Class</dt><dd><p></p></dd>
 ...
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href='https://www.districtcouncils.gov.hk'>https://www.districtcouncils.gov.hk</a></p>
-<p><a href='https://dce2019.hk01.com/'>https://dce2019.hk01.com/</a></p>
+    <p><a href='https://www.td.gov.hk/'>https://www.td.gov.hk/</a></p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
