@@ -69,14 +69,17 @@
 <a href="#introduction" class="anchor"></a>Introduction</h3>
 <p>This package contains datasets on Hong Kong. This package is developed as part of the Hong Kong Districts Info group of projects, which is dedicated to using data science to help make public information more accessible and consumable. The package contains the following datasets:</p>
 <ul>
-<li>
-<code>hkdc</code> - A dataset containing information about Hong Kong District Councillors (elected 2019), with variables such as their constituency, region, share of vote, total votes, link to their Facebook pages, etc. (Sources: <a href="https://www.districtcouncils.gov.hk" class="uri">https://www.districtcouncils.gov.hk</a>; <a href="https://dce2019.hk01.com/" class="uri">https://dce2019.hk01.com/</a>)</li>
+<li><p><code>hkdc</code> - A dataset containing information about Hong Kong District Councillors (elected 2019), with variables such as their constituency, region, share of vote, total votes, link to their Facebook pages, etc. (Sources: <a href="https://www.districtcouncils.gov.hk" class="uri">https://www.districtcouncils.gov.hk</a>; <a href="https://dce2019.hk01.com/" class="uri">https://dce2019.hk01.com/</a>)</p></li>
+<li><p><code>hk_accidents</code> - A dataset containing traffic accidents between 2014 and 2019.</p></li>
+<li><p><code>hk_collisions</code> - A dataset containing information of collisions by casualties between 2014 and 2019.</p></li>
+<li><p><code>hk_vehicles</code> - A dataset containing information of vehicles by casualties between 2014 and 2019.</p></li>
 </ul>
+<p>The datasets <code>hk_accidents</code>, <code>hk_collisions</code>, and <code>hk_vehicles</code> are related and can be joined together using the variable <code>OBJECTID</code>.</p>
 </div>
 <div id="installation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h3>
-<p>{hkdatasets} is not release on CRAN (yet). You can install the latest development version from GitHub with:</p>
+<p>{hkdatasets} is not released on CRAN (yet). You can install the latest development version from GitHub with:</p>
 <pre><code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("devtools")
 devtools::install_github("Hong-Kong-Districts-Info/hkdatasets")</a></code></pre>
 </div>
