@@ -1,6 +1,8 @@
 # hkdatasets
 An R data package containing datasets relating to Hong Kong
 
+[![R build status](https://github.com/Hong-Kong-Districts-Info/hkdatasets/workflows/R-CMD-check/badge.svg)](https://github.com/Hong-Kong-Districts-Info/hkdatasets/actions)
+
 ### Installation
 
 {hkdatasets} is not release on CRAN (yet). 
@@ -14,4 +16,4 @@ devtools::install_github("Hong-Kong-Districts-Info/hkdatasets")
 ### Contact
 Please feel free to submit suggestions and report bugs: https://github.com/Hong-Kong-Districts-Info/hkdatasets/issues
 
-Also check out our [website](https://hong-kong-districts-info.github.io/) for our other work and projects
+Also check out our [website](https://hong-kong-districts-info.github.io/) for our other work and projects!
