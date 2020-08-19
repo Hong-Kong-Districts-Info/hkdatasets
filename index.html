@@ -62,11 +62,11 @@
 <div id="hkdatasets" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#hkdatasets" class="anchor"></a>hkdatasets</h1></div>
-<p>An R data package containing datasets relating to Hong Kong</p>
+<p><span class="emoji" data-emoji="package">📦</span> An R data package containing datasets relating to Hong Kong</p>
 <p><a href="https://github.com/Hong-Kong-Districts-Info/hkdatasets/actions"><img src="https://github.com/Hong-Kong-Districts-Info/hkdatasets/workflows/R-CMD-check/badge.svg" alt="R build status"></a></p>
-<div id="introduction" class="section level3">
+<div id="-introduction" class="section level3">
 <h3 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h3>
+<a href="#-introduction" class="anchor"></a><span class="emoji" data-emoji="page_with_curl">📃</span> Introduction</h3>
 <p>This package contains datasets on Hong Kong. This package is developed as part of the Hong Kong Districts Info group of projects, which is dedicated to using data science to help make public information more accessible and consumable. The package contains the following datasets:</p>
 <ul>
 <li><p><code>hkdc</code> - A dataset containing information about Hong Kong District Councillors (elected 2019), with variables such as their constituency, region, share of vote, total votes, link to their Facebook pages, etc. (Sources: <a href="https://www.districtcouncils.gov.hk" class="uri">https://www.districtcouncils.gov.hk</a>; <a href="https://dce2019.hk01.com/" class="uri">https://dce2019.hk01.com/</a>)</p></li>
@@ -74,27 +74,29 @@
 <li><p><code>hk_collisions</code> - A dataset containing information of collisions by casualties between 2014 and 2019.</p></li>
 <li><p><code>hk_vehicles</code> - A dataset containing information of vehicles by casualties between 2014 and 2019.</p></li>
 </ul>
-<p>The datasets <code>hk_accidents</code>, <code>hk_collisions</code>, and <code>hk_vehicles</code> are related and can be joined together using the variable <code>OBJECTID</code>.</p>
+<p>The datasets <code>hk_accidents</code>, <code>hk_collisions</code>, and <code>hk_vehicles</code> are related and can be joined together using the variable <code>OBJECTID</code>. This dataset was made available via a Freedom of Information request to the <a href="https://www.td.gov.hk/">Hong Kong Transport Department</a>. We would also like to thank the authors behind the <a href="https://cran.r-project.org/web/packages/HK80/index.html">{HK80}</a> package to enable us to convert the <strong>HK1980GRID</strong> coordinate system to longitudes and latitudes in the <code>hk_accidents</code> dataset.</p>
+<p><a href="https://github.com/Hong-Kong-Districts-Info/hkdatasets">Visit our GitHub</a></p>
 </div>
-<div id="installation" class="section level3">
+<div id="-installation" class="section level3">
 <h3 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h3>
+<a href="#-installation" class="anchor"></a><span class="emoji" data-emoji="wrench">🔧</span> Installation</h3>
 <p>{hkdatasets} is not released on CRAN (yet). You can install the latest development version from GitHub with:</p>
 <pre><code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("devtools")
 devtools::install_github("Hong-Kong-Districts-Info/hkdatasets")</a></code></pre>
 </div>
-<div id="datasets" class="section level3">
+<div id="-datasets" class="section level3">
 <h3 class="hasAnchor">
-<a href="#datasets" class="anchor"></a>Datasets</h3>
+<a href="#-datasets" class="anchor"></a><span class="emoji" data-emoji="chart_with_upwards_trend">📈</span> Datasets</h3>
 <p>If you are exploring the package, we recommend starting with 2019 District Councillors dataset:</p>
 <pre><code><a href="https://rdrr.io/pkg/hkdatasets/man">library(hkdatasets)
 head(hkdc)</a></code></pre>
 <p>To find out more about the variable and the source of the dataset, you can run:</p>
 <pre><code><a href="reference/hkdc.html">?hkdc</a></code></pre>
+<p>Note: this dataset contains Chinese characters in the UTF-8 encoding.</p>
 </div>
-<div id="contact" class="section level3">
+<div id="-contact" class="section level3">
 <h3 class="hasAnchor">
-<a href="#contact" class="anchor"></a>Contact</h3>
+<a href="#-contact" class="anchor"></a><span class="emoji" data-emoji="mailbox_with_mail">📬</span> Contact</h3>
 <p>Please feel free to submit suggestions and report bugs: <a href="https://github.com/Hong-Kong-Districts-Info/hkdatasets/issues" class="uri">https://github.com/Hong-Kong-Districts-Info/hkdatasets/issues</a></p>
 <p>Also check out our <a href="https://hong-kong-districts-info.github.io/">website</a> for our other work and projects!</p>
 </div>
