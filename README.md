@@ -13,6 +13,19 @@ install.packages("devtools")
 devtools::install_github("Hong-Kong-Districts-Info/hkdatasets")
 ```
 
+### Datasets
+
+If you are exploring the package, we recommend starting with 2019 District Councillors dataset:
+
+```
+library(hkdatasets)
+head(hkdc)
+```
+To find out more about the variable and the source of the dataset, you can run:
+```
+?hkdc
+```
+
 ### Contact
 Please feel free to submit suggestions and report bugs: https://github.com/Hong-Kong-Districts-Info/hkdatasets/issues
 
