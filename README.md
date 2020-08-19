@@ -9,9 +9,15 @@ This package contains datasets on Hong Kong. This package is developed as part o
 
 - `hkdc` - A dataset containing information about Hong Kong District Councillors (elected 2019), with variables such as their constituency, region, share of vote, total votes, link to their Facebook pages, etc. (Sources: https://www.districtcouncils.gov.hk; https://dce2019.hk01.com/)
 
+- `hk_accidents` - A dataset containing traffic accidents between 2014 and 2019.
+- `hk_collisions` - A dataset containing information of collisions by casualties between 2014 and 2019.
+- `hk_vehicles` - A dataset containing information of vehicles by casualties between 2014 and 2019.
+
+The datasets `hk_accidents`, `hk_collisions`, and `hk_vehicles` are related and can be joined together using the variable `OBJECTID`.
+
 ### Installation
 
-{hkdatasets} is not release on CRAN (yet). 
+{hkdatasets} is not released on CRAN (yet). 
 You can install the latest development version from GitHub with:
 
 ```
