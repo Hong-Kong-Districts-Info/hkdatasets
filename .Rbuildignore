@@ -2,3 +2,7 @@
 ^\.Rproj\.user$
 ^.dev$
 ^hkdatasets.Rproj$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
