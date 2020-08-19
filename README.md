@@ -1,9 +1,10 @@
 # hkdatasets
-An R data package containing datasets relating to Hong Kong
+:package: An R data package containing datasets relating to Hong Kong
+
 
 [![R build status](https://github.com/Hong-Kong-Districts-Info/hkdatasets/workflows/R-CMD-check/badge.svg)](https://github.com/Hong-Kong-Districts-Info/hkdatasets/actions)
 
-### Introduction
+### :page_with_curl: Introduction
 
 This package contains datasets on Hong Kong. This package is developed as part of the Hong Kong Districts Info group of projects, which is dedicated to using data science to help make public information more accessible and consumable. The package contains the following datasets:
 
@@ -13,9 +14,11 @@ This package contains datasets on Hong Kong. This package is developed as part o
 - `hk_collisions` - A dataset containing information of collisions by casualties between 2014 and 2019.
 - `hk_vehicles` - A dataset containing information of vehicles by casualties between 2014 and 2019.
 
-The datasets `hk_accidents`, `hk_collisions`, and `hk_vehicles` are related and can be joined together using the variable `OBJECTID`.
+The datasets `hk_accidents`, `hk_collisions`, and `hk_vehicles` are related and can be joined together using the variable `OBJECTID`. This dataset was made available via a Freedom of Information request to the [Hong Kong Transport Department](https://www.td.gov.hk/). We would also like to thank the authors behind the [{HK80}](https://cran.r-project.org/web/packages/HK80/index.html) package to enable us to convert the **HK1980GRID** coordinate system to longitudes and latitudes in the `hk_accidents` dataset. 
 
-### Installation
+[Visit our GitHub](https://github.com/Hong-Kong-Districts-Info/hkdatasets)
+
+### :wrench: Installation
 
 {hkdatasets} is not released on CRAN (yet). 
 You can install the latest development version from GitHub with:
@@ -25,7 +28,7 @@ install.packages("devtools")
 devtools::install_github("Hong-Kong-Districts-Info/hkdatasets")
 ```
 
-### Datasets
+### :chart_with_upwards_trend: Datasets
 
 If you are exploring the package, we recommend starting with 2019 District Councillors dataset:
 
@@ -37,8 +40,9 @@ To find out more about the variable and the source of the dataset, you can run:
 ```
 ?hkdc
 ```
+Note: this dataset contains Chinese characters in the UTF-8 encoding. 
 
-### Contact
+### :mailbox_with_mail: Contact
 Please feel free to submit suggestions and report bugs: https://github.com/Hong-Kong-Districts-Info/hkdatasets/issues
 
 Also check out our [website](https://hong-kong-districts-info.github.io/) for our other work and projects!
