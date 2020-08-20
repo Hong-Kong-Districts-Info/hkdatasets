@@ -4,6 +4,8 @@
 
 [![R build status](https://github.com/Hong-Kong-Districts-Info/hkdatasets/workflows/R-CMD-check/badge.svg)](https://github.com/Hong-Kong-Districts-Info/hkdatasets/actions)
 
+<img src="inst/logo.png" align="right" height = 150 width = 150/>
+
 ### :page_with_curl: Introduction
 
 This package contains datasets on Hong Kong. This package is developed as part of the Hong Kong Districts Info group of projects, which is dedicated to using data science to help make public information more accessible and consumable. The package contains the following datasets:
