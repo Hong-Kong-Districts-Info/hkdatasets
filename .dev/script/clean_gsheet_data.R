@@ -3,7 +3,7 @@ library(janitor)
 library(tidyr)
 library(dplyr)
 
-func_clean_gsheet_data <- function(data){
+clean_gsheet_data <- function(data){
   data %>%
     clean_names() %>%
     separate(col = xuan_qu_constituency, into = c("Constituency_ZH", "Constituency_EN"), sep = "\n", extra = "merge") %>%
