@@ -108,9 +108,9 @@
 <div id="contributing" class="section level1">
 
 <p>Please contribute! We love collaboration.</p>
-<div id="bugs-feature-requests" class="section level2">
+<div id="bugs-and-feature-requests" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bugs-feature-requests" class="anchor"></a>Bugs? Feature requests?</h2>
+<a href="#bugs-and-feature-requests" class="anchor"></a>Bugs and Feature requests</h2>
 <p>Submit an issue on the <a href="https://github.com/Hong-Kong-Districts-Info/hkdatasets/issues">issues page</a></p>
 </div>
 <div id="code-contributions" class="section level2">
@@ -122,9 +122,9 @@
 <p>If that’s the case, please open new issue(s) to have the discussion there, prior to submitting code.</p>
 <p>If your proposed contribution addresses multiple issues, it should ideally be broken into multiple pull requests. This will make it easier for me to review and approve.</p>
 </div>
-<div id="the-mechanics-of-contributing" class="section level2">
+<div id="how-to-contribute-if-you-are-not-already-a-collaborator" class="section level2">
 <h2 class="hasAnchor">
-<a href="#the-mechanics-of-contributing" class="anchor"></a>The mechanics of contributing:</h2>
+<a href="#how-to-contribute-if-you-are-not-already-a-collaborator" class="anchor"></a>How to contribute (IF you are not already a collaborator)</h2>
 <ol>
 <li>Fork this repo to your Github account</li>
 <li>Clone your version on your account down to your machine from your account, e.g,. git clone <a href="https://github.com/" class="uri">https://github.com/</a><yourgithubusername>/hkdatasets.git</yourgithubusername>
@@ -141,7 +141,7 @@
 <ol>
 <li>Open the <code>RProj</code> file, and ensure that your current working directory is set to the directory of the package repository.</li>
 <li>Read the dataset you’d like to add into your current environment, and make any data cleaning or manipulations necessary. We would recommend you to save any processing scripts in <code>.dev/script</code> and any raw data in <code>.dev/data</code>.</li>
-<li>Once you are happy to add the dataset to the package, run <code>usethis::use_data()</code>, passing the unquoted object to save in the argument. If this runs successfully, a <code>.rda</code> file should be set up in the package repository. You will be asked to document your dataset.</li>
+<li>Once you are happy to add the dataset to the package, run <code>usethis::use_data()</code>, passing the unquoted object to save in the argument. If this runs successfully, a <code>.rda</code> file should be set up in the package repository. You will be asked to document your dataset. If you are unsure how to do this, please refer to <a href="https://r-pkgs.org/data.html" class="uri">https://r-pkgs.org/data.html</a>.</li>
 <li>Add a R file in the <code>R</code> directory with the same name as your dataset. Use one of the existing R files as a template for the documentation.</li>
 <li>Once you are happy with everything, run <code>roxygen2::roxygenise()</code>. This will create the documentation files and notify you of any errors.</li>
 <li>Run <code>devtools::check()</code>. This will run <code>R CMD</code> checks to ensure that the package can be built properly.</li>
