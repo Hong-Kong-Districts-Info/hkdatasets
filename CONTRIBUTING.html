@@ -129,16 +129,29 @@
 <li>Fork this repo to your Github account</li>
 <li>Clone your version on your account down to your machine from your account, e.g,. git clone <a href="https://github.com/" class="uri">https://github.com/</a><yourgithubusername>/hkdatasets.git</yourgithubusername>
 </li>
-<li>Make sure to track progress upstream (i.e., on our version of janitor at sfirke/janitor) by doing git remote add upstream <a href="https://github.com/Hong-Kong-Districts-Info/hkdatasets.git" class="uri">https://github.com/Hong-Kong-Districts-Info/hkdatasets.git</a>. Before making changes, make sure to pull changes in from upstream by doing either <code>git fetch upstream</code> then merge later or <code>git pull upstream</code> to fetch and merge in one step</li>
+<li>Make sure to track progress upstream (i.e., on our version of hkdatasets at Hong-Kong-Districts-Info/hkdatasets) by doing git remote add upstream <a href="https://github.com/Hong-Kong-Districts-Info/hkdatasets.git" class="uri">https://github.com/Hong-Kong-Districts-Info/hkdatasets.git</a>. Before making changes, make sure to pull changes in from upstream by doing either <code>git fetch upstream</code> then merge later or <code>git pull upstream</code> to fetch and merge in one step</li>
 <li>Make your changes (bonus points for making changes on a new feature branch)</li>
 <li>Push up to your account</li>
 <li>Submit a pull request to the master branch at Hong-Kong-Districts-Info/hkdatasets.git</li>
 </ol>
 </div>
+<div id="how-to-add-a-dataset" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-add-a-dataset" class="anchor"></a>How to add a dataset</h2>
+<ol>
+<li>Open the <code>RProj</code> file, and ensure that your current working directory is set to the directory of the package repository.</li>
+<li>Read the dataset you’d like to add into your current environment, and make any data cleaning or manipulations necessary. We would recommend you to save any processing scripts in <code>.dev/script</code> and any raw data in <code>.dev/data</code>.</li>
+<li>Once you are happy to add the dataset to the package, run <code>usethis::use_data()</code>, passing the unquoted object to save in the argument. If this runs successfully, a <code>.rda</code> file should be set up in the package repository. You will be asked to document your dataset.</li>
+<li>Add a R file in the <code>R</code> directory with the same name as your dataset. Use one of the existing R files as a template for the documentation.</li>
+<li>Once you are happy with everything, run <code>roxygen2::roxygenise()</code>. This will create the documentation files and notify you of any errors.</li>
+<li>Run <code>devtools::check()</code>. This will run <code>R CMD</code> checks to ensure that the package can be built properly.</li>
+<li>You can run <code>devtools::install()</code> to install the package on your local machine. You can also commit your changes and push to the repository once you are happy.</li>
+</ol>
+</div>
 <div id="prefer-to-discuss-over-email" class="section level2">
 <h2 class="hasAnchor">
 <a href="#prefer-to-discuss-over-email" class="anchor"></a>Prefer to discuss over email?</h2>
-<p>Please email <a href="mailto:hkdistricts.info@gmail.com" class="email">hkdistricts.info@gmail.com</a></p>
+<p>Please email <a href="mailto:hkdistricts.info@gmail.com" class="email">hkdistricts.info@gmail.com</a>.</p>
 <p>Thanks for contributing!</p>
 </div>
 </div>
