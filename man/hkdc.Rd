@@ -5,7 +5,7 @@
 \alias{hkdc}
 \title{Dataset with public domain information on Hong Kong District Councillors (elected 2019).}
 \format{
-A data frame with 452 rows and 29 variables:
+A data frame with 452 rows and 33 variables:
 \describe{
 \item{ConstituencyCode}{Constituency code for the District Council}
 \item{Constituency_ZH}{Constituency name in Chinese}
@@ -30,12 +30,16 @@ A data frame with 452 rows and 29 variables:
 \item{ElectionDate}{Date when the DC is elected}
 \item{CandidateNum}{Candidate number of the DC when elected}
 \item{Occupation}{Occupation of the DC when elected}
-\item{Political}{Political Party of the DC when elected}
-\item{Camp}{Political leaning/camp of the DC when elected}
+\item{Political_ZH}{Political Party of the DC when elected in Chinese}
+\item{Political_EN}{Political Party of the DC when elected in English}
+\item{Camp_ZH}{Political leaning/camp of the DC when elected in Chinese}
+\item{Camp_EN}{Political leaning/camp of the DC when elected in English}
 \item{Vote}{Number of votes won}
 \item{VotePercentage}{Share of vote}
-\item{Gender}{Gender of the DC}
-\item{Tag}{Granualar political leaning/camp of the DC when elected}
+\item{Gender_ZH}{Gender of the DC in Chinese}
+\item{Gender_EN}{Gender of the DC in English}
+\item{Tag_ZH}{Granualar political leaning/camp of the DC when elected in Chinese}
+\item{Tag_EN}{Granualar political leaning/camp of the DC when elected in English}
 ...
 }
 }
