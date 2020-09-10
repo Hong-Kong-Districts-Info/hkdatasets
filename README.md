@@ -50,3 +50,5 @@ Note: this dataset contains Chinese characters in the UTF-8 encoding.
 Please feel free to submit suggestions and report bugs: https://github.com/Hong-Kong-Districts-Info/hkdatasets/issues
 
 Also check out our [website](https://hong-kong-districts-info.github.io/) for our other work and projects!
+
+You can find out about our current backlog of work on our public Trello [Doing board](https://trello.com/b/n5l7DMS5/doing).
