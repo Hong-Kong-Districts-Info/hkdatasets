@@ -1,15 +1,15 @@
 Package: hkdatasets
-Title: R package containing datasets relating to Hong Kong
-Version: 0.0.1
+Title: Datasets Related to Hong Kong
+Version: 0.0.2
 Authors@R: 
     c(person(given = "Martin", family = "Chan", role = c("aut", "cre"), email = "martinchan53@gmail.com"),
       person(given = "Avision", family = "Ho", role = c("ctb"), email = "hkdistricts.info@gmail.com"),
       person(given = "Ocean", family = "Cheung", role = c("ctb")),
       person(given = "Justin", family = "Yim", role = c("ctb")),
       person(given = "Gabriel", family = "Tam", role = c("ctb")))
-Description: This package contains datasets on Hong Kong, including information on the 2019 elected District Councillors and traffic collision data. All
+Description: Datasets related to Hong Kong, including information on the 2019 elected District Councillors and traffic collision data. All
     of the data in this package is available in the public domain.
-License: GPL-3 + file LICENSE
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
