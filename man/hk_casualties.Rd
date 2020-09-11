@@ -14,7 +14,11 @@ A data frame with 120110 rows and 10 variables:
 \item{Casualty_Sex}{}
 \item{Degree_of_Injury}{}
 \item{Role_of_Casualty}{}
-\item{Location_of_Injury}{}
+\item{Location_of_Injury_Head}{}
+\item{Location_of_Injury_Upper_trunk}{}
+\item{Location_of_Injury_Lower_trunk}{}
+\item{Location_of_Injury_Arms}{}
+\item{Location_of_Injury_Legs}{}
 \item{Pedestrian_Action}{}
 \item{Vehicle_Class_of_Driver_or_Pass}{}
 ...
