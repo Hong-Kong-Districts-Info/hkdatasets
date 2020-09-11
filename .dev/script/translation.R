@@ -15,7 +15,7 @@ hkdc <- hkdc %>%
   rename(Political_ZH = Political)
 
 ## Read in English translation
-Political_EN <- read.csv(here("dev", "data", "Political_EN.csv"))
+Political_EN <- read.csv(here(".dev", "data", "Political_EN.csv"))
 
 ## Translate
 hkdc <- hkdc %>%
