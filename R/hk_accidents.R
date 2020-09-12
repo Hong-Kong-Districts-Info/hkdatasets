@@ -7,7 +7,7 @@
 #'   \item{OBJECTID}{}
 #'   \item{Year}{}
 #'   \item{Serial_No_}{}
-#'   \item{Severity}{1 = Fatal; 2 = Serious; 3 = Slight}
+#'   \item{Severity}{}
 #'   \item{District_Council_District}{}
 #'   \item{Hit_and_Run}{}
 #'   \item{Weather}{}
