@@ -1,6 +1,6 @@
 Package: hkdatasets
 Title: Datasets Related to Hong Kong
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: 
     c(person(given = "Martin", family = "Chan", role = c("aut", "cre"), email = "martinchan53@gmail.com"),
       person(given = "Avision", family = "Ho", role = c("ctb"), email = "hkdistricts.info@gmail.com"),
@@ -16,3 +16,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Depends: 
     R (>= 2.10)
+Suggests: 
+    dplyr,
+    tidyr,
+    here,
+    showtext

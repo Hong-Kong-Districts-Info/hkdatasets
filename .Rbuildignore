@@ -1,3 +1,5 @@
+^renv$
+^renv\.lock$
 ^hkdatasets2\.Rproj$
 ^\.Rproj\.user$
 ^.dev$
