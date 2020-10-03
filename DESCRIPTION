@@ -16,6 +16,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 URL: https://hong-kong-districts-info.github.io/hkdatasets/
 BugReports: https://github.com/Hong-Kong-Districts-Info/hkdatasets/issues
+Maintainer: Martin Chan <martinchan53@gmail.com>
 Depends: 
     R (>= 2.10)
 Suggests: 
