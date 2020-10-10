@@ -28,9 +28,10 @@ dum_cols <-
   purrr::map(function(x){
     hkstreetnames20 %>%
       mutate(!!sym(x) := stringr::str_detect(DC, x)) %>%
-      select(StreetNames_EN, x)
+      select(x)
   }) %>%
-  purrr::reduce(left_join, by = "StreetNames_EN")
+  bind_cols() %>%
+  cbind(StreetNames_EN = hkstreetnames20$StreetNames_EN, .)
 
 ## bind with original df
 hkstreetnames20 <- left_join(hkstreetnames20, dum_cols, by = "StreetNames_EN")
