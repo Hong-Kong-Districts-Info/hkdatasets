@@ -24,9 +24,13 @@ The datasets `hk_accidents`, `hk_collisions`, and `hk_vehicles` are related and 
 
 ### :wrench: Installation
 
-{hkdatasets} is not released on CRAN (yet). 
-You can install the latest development version from GitHub with:
+{hkdatasets} is now available on [CRAN](https://cran.r-project.org/package=hkdatasets). You can install this with:
 
+```
+install.packages("hkdatasets")
+```
+
+You can also install the latest development version from GitHub with:
 ```
 install.packages("devtools")
 devtools::install_github("Hong-Kong-Districts-Info/hkdatasets")
