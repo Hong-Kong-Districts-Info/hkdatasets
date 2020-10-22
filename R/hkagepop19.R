@@ -3,7 +3,7 @@
 #' @details This dataset is updated as of 2019. Numbers represent estimates of population
 #' based on calculated census percentages. 
 #'
-#' @format A data frame with 18 rows and 8 variables:
+#' @format A data frame with 21 rows and 8 variables:
 #' \describe{
 #'   \item{District_ZH}{}
 #'   \item{District_EN}{}

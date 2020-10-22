@@ -3,31 +3,31 @@
 \docType{data}
 \name{hkstreetnames20}
 \alias{hkstreetnames20}
-\title{Dataset with Hong Kong Street Names as at 2020.}
+\title{Dataset with Hong Kong Street Names in 2020.}
 \format{
-A data frame with 4603 rows and 21 variables:
+A data frame with 4553 rows and 3 variables:
 \describe{
 \item{DC}{Constituency code for the District Council}
 \item{StreetNames_EN}{Street name in English}
 \item{StreetNames_ZH}{Street name in Chinese}
-\item{TM}{Tuen Mun district}
-\item{ST}{Sha Tin district}
-\item{E}{Eastern district}
-\item{S}{Southern district}
-\item{WC}{Wan Chai district}
-\item{C&W}{Central and Western district}
-\item{Is}{Islands district}
-\item{YL}{Yuen Long district}
-\item{SK}{Sai Kung district}
-\item{KC}{Kowloon City district}
-\item{YTM}{Yau Tsim Mong district}
-\item{KT}{Kwun Tong district}
-\item{SSP}{Sham Shui Po district}
-\item{N}{Noth district}
-\item{TP}{Tai Po district}
-\item{K&T}{Kwai Tsing district}
-\item{TW}{Tsuen Wan district}
-\item{WTS}{Wong Tai Sin district}
+\item{TM}{ }
+\item{ST}{ }
+\item{E}{ }
+\item{S}{ }
+\item{WC}{ }
+\item{C&W}{ }
+\item{Is}{ }
+\item{YL}{ }
+\item{SK}{ }
+\item{KC}{ }
+\item{YTM}{ }
+\item{KT}{ }
+\item{SSP}{ }
+\item{N}{ }
+\item{TP}{ }
+\item{K&T}{ }
+\item{TW}{ }
+\item{WTS}{ }
 ...
 }
 }

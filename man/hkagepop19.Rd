@@ -5,7 +5,7 @@
 \alias{hkagepop19}
 \title{Land-based non-institutional population by District Council district and age group}
 \format{
-A data frame with 18 rows and 8 variables:
+A data frame with 21 rows and 8 variables:
 \describe{
 \item{District_ZH}{}
 \item{District_EN}{}
