@@ -2,7 +2,7 @@
 :package: An R data package containing datasets related to Hong Kong
 
 
-[![R build status](https://github.com/Hong-Kong-Districts-Info/hkdatasets/workflows/R-CMD-check/badge.svg)](https://github.com/Hong-Kong-Districts-Info/hkdatasets/actions)
+[![R build status](https://github.com/Hong-Kong-Districts-Info/hkdatasets/workflows/R-CMD-check/badge.svg)](https://github.com/Hong-Kong-Districts-Info/hkdatasets/actions) [![CodeFactor](https://www.codefactor.io/repository/github/hong-kong-districts-info/hkdatasets/badge)](https://www.codefactor.io/repository/github/hong-kong-districts-info/hkdatasets)
 
 <img src="inst/logo.png" align="right" height = 150 width = 150/>
 
