@@ -10,7 +10,7 @@ A data frame with 18 rows and 5 variables:
 \item{Code}{District Code}
 \item{District_EN}{District name in English}
 \item{District_ZH}{District name in Chinese}
-\item{Region_ZH}{Region name in English}
+\item{Region_EN}{Region name in English}
 \item{Region_ZH}{Region name in Chinese}
 \item{Abbrev}{District Abbreviation}
 ...

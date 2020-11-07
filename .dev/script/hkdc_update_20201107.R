@@ -23,5 +23,5 @@ hkdc <-
   select(-FacebookURLNew)
   
 # Update package
-hkdc %>% usethis::use_data(overwrite = TRUE)
+usethis::use_data(hkdc, overwrite = TRUE)
 
