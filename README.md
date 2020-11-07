@@ -11,7 +11,8 @@
 This package contains datasets on Hong Kong. This package is developed as part of the Hong Kong Districts Info group of projects, which is dedicated to using data science to help make public information more accessible and consumable. The package contains the following datasets:
 
 - `hkdc` - A dataset containing information about Hong Kong District Councillors (elected 2019), with variables such as their constituency, region, share of vote, total votes, link to their Facebook pages, etc. (Sources: https://www.districtcouncils.gov.hk; https://dce2019.hk01.com/)
-
+- `hkstreetnames20` - A dataset containing names of all the streets in Hong Kong as at 2020.
+- `hkdistrict_summary` - A summary table detailing Hong Kong's districts, their region classifications, and abbreviated labels.
 - `hk_accidents` - A dataset containing traffic accidents between 2014 and 2019.
 - `hk_collisions` - A dataset containing information of collisions by casualties between 2014 and 2019.
 - `hk_vehicles` - A dataset containing information of vehicles by casualties between 2014 and 2019.
