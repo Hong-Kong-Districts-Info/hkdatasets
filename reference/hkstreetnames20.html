@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dataset of vehicles involved in collisions between 2014 and 2019. — hk_vehicles • hkdatasets</title>
+<title>Dataset with Hong Kong Street Names as at 2020. — hkstreetnames20 • hkdatasets</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,8 @@
 
 
 
-<meta property="og:title" content="Dataset of vehicles involved in collisions between 2014 and 2019. — hk_vehicles" />
-<meta property="og:description" content="A dataset containing information of collisions by vehicles between 2014
-and 2019." />
+<meta property="og:title" content="Dataset with Hong Kong Street Names as at 2020. — hkstreetnames20" />
+<meta property="og:description" content="A dataset containing street names in Hong Kong as at 2020." />
 
 
 
@@ -109,37 +108,49 @@ and 2019." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Dataset of vehicles involved in collisions between 2014 and 2019.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/Hong-Kong-Districts-Info/hkdatasets/blob/master/R/hk_vehicles.R'><code>R/hk_vehicles.R</code></a></small>
-    <div class="hidden name"><code>hk_vehicles.Rd</code></div>
+    <h1>Dataset with Hong Kong Street Names as at 2020.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/Hong-Kong-Districts-Info/hkdatasets/blob/master/R/hkstreetnames20.R'><code>R/hkstreetnames20.R</code></a></small>
+    <div class="hidden name"><code>hkstreetnames20.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataset containing information of collisions by vehicles between 2014
-and 2019.</p>
+    <p>A dataset containing street names in Hong Kong as at 2020.</p>
     </div>
 
-    <pre class="usage"><span class='va'>hk_vehicles</span></pre>
+    <pre class="usage"><span class='va'>hkstreetnames20</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 153062 rows and 8 variables:</p><dl>
-<dt>OBJECTID</dt><dd><p></p></dd>
-<dt>Year</dt><dd><p></p></dd>
-<dt>Serial_No_</dt><dd><p></p></dd>
-<dt>Driver_Age</dt><dd><p></p></dd>
-<dt>Driver_Sex</dt><dd><p></p></dd>
-<dt>Year_of_Manufacture</dt><dd><p></p></dd>
-<dt>Severity_of_Accident</dt><dd><p></p></dd>
-<dt>Vehicle_Class</dt><dd><p></p></dd>
+    <p>A data frame with 4603 rows and 21 variables:</p><dl>
+<dt>DC</dt><dd><p>Constituency code for the District Council</p></dd>
+<dt>StreetNames_EN</dt><dd><p>Street name in English</p></dd>
+<dt>StreetNames_ZH</dt><dd><p>Street name in Chinese</p></dd>
+<dt>TM</dt><dd><p>Tuen Mun district</p></dd>
+<dt>ST</dt><dd><p>Sha Tin district</p></dd>
+<dt>E</dt><dd><p>Eastern district</p></dd>
+<dt>S</dt><dd><p>Southern district</p></dd>
+<dt>WC</dt><dd><p>Wan Chai district</p></dd>
+<dt>C&amp;W</dt><dd><p>Central and Western district</p></dd>
+<dt>Is</dt><dd><p>Islands district</p></dd>
+<dt>YL</dt><dd><p>Yuen Long district</p></dd>
+<dt>SK</dt><dd><p>Sai Kung district</p></dd>
+<dt>KC</dt><dd><p>Kowloon City district</p></dd>
+<dt>YTM</dt><dd><p>Yau Tsim Mong district</p></dd>
+<dt>KT</dt><dd><p>Kwun Tong district</p></dd>
+<dt>SSP</dt><dd><p>Sham Shui Po district</p></dd>
+<dt>N</dt><dd><p>North district</p></dd>
+<dt>TP</dt><dd><p>Tai Po district</p></dd>
+<dt>K&amp;T</dt><dd><p>Kwai Tsing district</p></dd>
+<dt>TW</dt><dd><p>Tsuen Wan district</p></dd>
+<dt>WTS</dt><dd><p>Wong Tai Sin district</p></dd>
 ...
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href='https://www.td.gov.hk/'>https://www.td.gov.hk/</a></p>
+    <p><a href='https://www.landsd.gov.hk'>https://www.landsd.gov.hk</a></p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

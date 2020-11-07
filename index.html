@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">hkdatasets</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.4</span>
       </span>
     </div>
 
@@ -78,10 +78,18 @@
 <a href="#-introduction" class="anchor"></a><span class="emoji" data-emoji="page_with_curl">📃</span> Introduction</h3>
 <p>This package contains datasets on Hong Kong. This package is developed as part of the Hong Kong Districts Info group of projects, which is dedicated to using data science to help make public information more accessible and consumable. The package contains the following datasets:</p>
 <ul>
-<li><p><code>hkdc</code> - A dataset containing information about Hong Kong District Councillors (elected 2019), with variables such as their constituency, region, share of vote, total votes, link to their Facebook pages, etc. (Sources: <a href="https://www.districtcouncils.gov.hk" class="uri">https://www.districtcouncils.gov.hk</a>; <a href="https://dce2019.hk01.com/" class="uri">https://dce2019.hk01.com/</a>)</p></li>
-<li><p><code>hk_accidents</code> - A dataset containing traffic accidents between 2014 and 2019.</p></li>
-<li><p><code>hk_collisions</code> - A dataset containing information of collisions by casualties between 2014 and 2019.</p></li>
-<li><p><code>hk_vehicles</code> - A dataset containing information of vehicles by casualties between 2014 and 2019.</p></li>
+<li>
+<code>hkdc</code> - A dataset containing information about Hong Kong District Councillors (elected 2019), with variables such as their constituency, region, share of vote, total votes, link to their Facebook pages, etc. (Sources: <a href="https://www.districtcouncils.gov.hk" class="uri">https://www.districtcouncils.gov.hk</a>; <a href="https://dce2019.hk01.com/" class="uri">https://dce2019.hk01.com/</a>)</li>
+<li>
+<code>hkstreetnames20</code> - A dataset containing names of all the streets in Hong Kong as at 2020.</li>
+<li>
+<code>hkdistrict_summary</code> - A summary table detailing Hong Kong’s districts, their region classifications, and abbreviated labels.</li>
+<li>
+<code>hk_accidents</code> - A dataset containing traffic accidents between 2014 and 2019.</li>
+<li>
+<code>hk_collisions</code> - A dataset containing information of collisions by casualties between 2014 and 2019.</li>
+<li>
+<code>hk_vehicles</code> - A dataset containing information of vehicles by casualties between 2014 and 2019.</li>
 </ul>
 <p><img src="inst/collision-data-diagram-2.png"></p>
 <p>The datasets <code>hk_accidents</code>, <code>hk_collisions</code>, and <code>hk_vehicles</code> are related and can be joined together using the variable <code>Serial_No_</code>. This dataset was made available via a Freedom of Information request to the <a href="https://www.td.gov.hk/">Hong Kong Transport Department</a>. We would also like to thank the authors behind the <a href="https://CRAN.R-project.org/package=HK80">{HK80}</a> package to enable us to convert the <strong>HK1980GRID</strong> coordinate system to longitudes and latitudes in the <code>hk_accidents</code> dataset.</p>

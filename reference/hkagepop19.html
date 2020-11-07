@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dataset of vehicles involved in collisions between 2014 and 2019. — hk_vehicles • hkdatasets</title>
+<title>Land-based non-institutional population by District Council district and age group — hkagepop19 • hkdatasets</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,8 @@
 
 
 
-<meta property="og:title" content="Dataset of vehicles involved in collisions between 2014 and 2019. — hk_vehicles" />
-<meta property="og:description" content="A dataset containing information of collisions by vehicles between 2014
-and 2019." />
+<meta property="og:title" content="Land-based non-institutional population by District Council district and age group — hkagepop19" />
+<meta property="og:description" content="Land-based non-institutional population by District Council district and age group" />
 
 
 
@@ -109,37 +108,40 @@ and 2019." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Dataset of vehicles involved in collisions between 2014 and 2019.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/Hong-Kong-Districts-Info/hkdatasets/blob/master/R/hk_vehicles.R'><code>R/hk_vehicles.R</code></a></small>
-    <div class="hidden name"><code>hk_vehicles.Rd</code></div>
+    <h1>Land-based non-institutional population by District Council district and age group</h1>
+    <small class="dont-index">Source: <a href='https://github.com/Hong-Kong-Districts-Info/hkdatasets/blob/master/R/hkagepop19.R'><code>R/hkagepop19.R</code></a></small>
+    <div class="hidden name"><code>hkagepop19.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataset containing information of collisions by vehicles between 2014
-and 2019.</p>
+    <p>Land-based non-institutional population by District Council district and age group</p>
     </div>
 
-    <pre class="usage"><span class='va'>hk_vehicles</span></pre>
+    <pre class="usage"><span class='va'>hkagepop19</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 153062 rows and 8 variables:</p><dl>
-<dt>OBJECTID</dt><dd><p></p></dd>
-<dt>Year</dt><dd><p></p></dd>
-<dt>Serial_No_</dt><dd><p></p></dd>
-<dt>Driver_Age</dt><dd><p></p></dd>
-<dt>Driver_Sex</dt><dd><p></p></dd>
-<dt>Year_of_Manufacture</dt><dd><p></p></dd>
-<dt>Severity_of_Accident</dt><dd><p></p></dd>
-<dt>Vehicle_Class</dt><dd><p></p></dd>
+    <p>A data frame with 18 rows and 8 variables:</p><dl>
+<dt>District_ZH</dt><dd><p>District Name in Chinese</p></dd>
+<dt>District_EN</dt><dd><p>District Name in English</p></dd>
+<dt>Age_0_14</dt><dd><p>Population aged between 0 and 14</p></dd>
+<dt>Age_15_24</dt><dd><p>Population aged between 15 and 24</p></dd>
+<dt>Age_25_44</dt><dd><p>Population aged between 25 and 44</p></dd>
+<dt>Age_45_64</dt><dd><p>Population aged between 45 and 64</p></dd>
+<dt>Age_65</dt><dd><p>Population aged 65+</p></dd>
+<dt>TotalPopulation</dt><dd><p>Total population per district</p></dd>
 ...
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href='https://www.td.gov.hk/'>https://www.td.gov.hk/</a></p>
+    <p><a href='https://www.censtatd.gov.hk/hkstat/sub/sp150.jsp?productCode=FA100096'>https://www.censtatd.gov.hk/hkstat/sub/sp150.jsp?productCode=FA100096</a></p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This dataset is updated as of 2019. Numbers represent estimates of population
+based on calculated census percentages.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
