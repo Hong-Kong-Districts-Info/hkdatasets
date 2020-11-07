@@ -21,7 +21,7 @@
 #'   \item{YTM}{Yau Tsim Mong district}
 #'   \item{KT}{Kwun Tong district}
 #'   \item{SSP}{Sham Shui Po district}
-#'   \item{N}{Noth district}
+#'   \item{N}{North district}
 #'   \item{TP}{Tai Po district}
 #'   \item{K&T}{Kwai Tsing district}
 #'   \item{TW}{Tsuen Wan district}
