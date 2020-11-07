@@ -11,4 +11,4 @@ library(dplyr)
 hkdistrict_summary <- readxl::read_xlsx(here::here(".dev", "data", "hkdistrictsummary.xlsx"))
 
 ## Use data
-usethis::use_data(hkdistrict_summary)
+usethis::use_data(hkdistrict_summary, overwrite = TRUE)

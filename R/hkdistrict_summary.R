@@ -5,11 +5,12 @@
 #' 
 #' @format A data frame with 18 rows and 5 variables:
 #' \describe{
-#'   \item{Code}{Constituency code for the District}
-#'   \item{District_EN}{ }
-#'   \item{District_ZH}{ } 
-#'   \item{Region_ZH}{ }
-#'   \item{Abbrev}{ }
+#'   \item{Code}{District Code}
+#'   \item{District_EN}{District name in English}
+#'   \item{District_ZH}{District name in Chinese} 
+#'   \item{Region_ZH}{Region name in English}
+#'   \item{Region_ZH}{Region name in Chinese}
+#'   \item{Abbrev}{District Abbreviation}
 #'   ...
 #' }
 #' 
