@@ -8,7 +8,7 @@
 
 ### :page_with_curl: Introduction
 
-This package contains datasets on Hong Kong. This package is developed as part of the Hong Kong Districts Info group of projects, which is dedicated to using data science to help make public information more accessible and consumable. The package contains the following datasets:
+This package contains datasets on Hong Kong. This package is developed as part of the [Hong Kong Districts Info](https://hong-kong-districts-info.github.io/) group of projects, which is dedicated to using data science to help make public information more accessible and consumable. The package contains the following datasets:
 
 - `hkdc` - A dataset containing information about Hong Kong District Councillors (elected 2019), with variables such as their constituency, region, share of vote, total votes, link to their Facebook pages, etc. (Sources: https://www.districtcouncils.gov.hk; https://dce2019.hk01.com/)
 - `hkstreetnames20` - A dataset containing names of all the streets in Hong Kong as at 2020.
