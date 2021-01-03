@@ -1,0 +1,19 @@
+﻿Code,District_EN,District_ZH,Region_EN,Region_ZH,Abbrev
+A,Central and Western,中西區,Hong Kong Island,香港島,C&W
+B,Wan Chai,灣仔區,Hong Kong Island,香港島,WC
+C,Eastern,東區,Hong Kong Island,香港島,E
+D,Southern,南區,Hong Kong Island,香港島,S
+E,Yau Tsim Mong,油尖旺區,Kowloon,九龍,YTM
+F,Sham Shui Po,深水埗區,Kowloon,九龍,SSP
+G,Kowloon City,九龍城區,Kowloon,九龍,KC
+H,Wong Tai Sin,黃大仙區,Kowloon,九龍,WTS
+J,Kwun Tong,觀塘區,Kowloon,九龍,KT
+K,Tsuen Wan,荃灣區,New Territories West,新界西,TW
+L,Tuen Mun,屯門區,New Territories West,新界西,TM
+M,Yuen Long,元朗區,New Territories West,新界西,YL
+N,North,北區,New Territories East,新界東,N
+P,Tai Po,大埔區,New Territories East,新界東,TP
+Q,Sai Kung,西貢區,New Territories East,新界東,SK
+R,Sha Tin,沙田區,New Territories East,新界東,ST
+S,Kwai Tsing,葵青區,New Territories West,新界西,K&T
+T,Islands,離島區,New Territories West,新界西,Is
