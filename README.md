@@ -14,7 +14,7 @@ This package contains datasets on Hong Kong. This package is developed as part o
 - `hkstreetnames20` - A dataset containing names of all the streets in Hong Kong as at 2020.
 - `hkdistrict_summary` - A summary table detailing Hong Kong's districts, their region classifications, and abbreviated labels.
 - `hk_accidents` - A dataset containing traffic accidents between 2014 and 2019.
-- `hk_collisions` - A dataset containing information of collisions by casualties between 2014 and 2019.
+- `hk_casualties` - A dataset containing information of collisions by casualties between 2014 and 2019.
 - `hk_vehicles` - A dataset containing information of vehicles by casualties between 2014 and 2019.
 
 ![](https://raw.githubusercontent.com/Hong-Kong-Districts-Info/hkdatasets/master/inst/collision-data-diagram-2.png)
