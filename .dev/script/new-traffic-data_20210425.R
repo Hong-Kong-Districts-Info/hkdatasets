@@ -1,6 +1,7 @@
 library(tidyverse)
 library(readxl)
 library(here)
+library(hkdatasets)
 library(dataCompareR)
 
 # load data ---------------------------------------------------------------
@@ -19,6 +20,21 @@ hk_vehicles_new <-
   read_xlsx(
     here("data-raw",
          "FurtherData_Vehicle20142019_Joined_201216.xlsx"))
+
+# labels for matching up to new data
+# read each individual data frame to global environment
+code_sheets_path <-
+  here("data-raw",
+       "reformatted_Code table_v1.xlsx")
+
+code_sheets <- excel_sheets(code_sheets_path)
+
+code_sheets %>%
+  purrr::map(function(sheet){ # iterate through each sheet name
+    assign(x = paste0("t_", sheet), # prefixed variable names
+           value = readxl::read_xlsx(path = code_sheets_path, sheet = sheet),
+           envir = .GlobalEnv)
+  })
 
 # accidents check ---------------------------------------------------------
 
@@ -89,7 +105,18 @@ compare_veh %>%
 # 1. join new variables up to the old datasets
 # 2. "code" new variables as factor / categorical variables
 
-hk_accidents_new_cleaned <-
+look_up <- function(x,
+                    dictionary,
+                    index = "Code",
+                    match = "Description"){
+  dictionary[[match]][c(match(x, dictionary[[index]]))]
+}
+
+# look_up(iris$Species,
+#         c("virginica", "versicolor", "setosa"),
+#         replace = c("tum", "de", "da"))
+
+hk_accidents_new_cleaned_unlabelled <-
   hk_accidents %>%
   left_join(
     # New columns
@@ -120,6 +147,21 @@ hk_accidents_new_cleaned <-
     by = c("Date", "Serial_No_", "Year")
   )
   
+# labelling ----------------------------------------------------------------
+
+hk_accidents_new_cleaned_labelled <-
+  hk_accidents_new_cleaned_unlabelled %>%
+  left_join(
+    rename(t_A1_street_name, Street_Name = "Description"),
+    by = c("Street_nam" = "Code")) %>%
+  mutate(Street_Name = look_up(Street_nam, dictionary = t_A1_street_name)) %>%
+  mutate(Within_70m = look_up(Within_70m, dictionary =  t_Within_70m)) %>%
+  
+  # Remove old names
+  select( 
+    -Street_nam
+  )
+
 # interactive tests
 
 table(hk_accidents$Road_Classification)
