@@ -25,6 +25,21 @@
 #'   \item{Time}{}
 #'   \item{latitude}{}
 #'   \item{longitude}{}
+#'   \item{Overtaking}{}
+#'   \item{Within_70m}{}
+#'   \item{Precise_Location}{}
+#'   \item{Accident}{}
+#'   \item{Junction_Type}{}
+#'   \item{Crossing_Control}{}
+#'   \item{Crossing_Type}{}
+#'   \item{Street_Name}{}
+#'   \item{Second_Street_Name}{}
+#'   \item{Road_Type}{}
+#'   \item{Cycle_Type}{}
+#'   \item{Type_of_Collision_v2}{}
+#'   \item{Structure_Type}{}
+#'   \item{Road_Class_L}{}
+#'   \item{Road_Classification_v2}{}
 #'   ...
 #' }
 #' @source \url{https://www.td.gov.hk/}
