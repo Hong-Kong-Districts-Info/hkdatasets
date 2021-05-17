@@ -14,11 +14,10 @@
 #'   \item{Rain}{}
 #'   \item{Natural_Light}{}
 #'   \item{Junction_Control}{}
-#'   \item{Road_Classification}{}
 #'   \item{Vehicle_Movements}{}
 #'   \item{Type_of_Collision}{}
-#'   \item{No__of_Vehicles_Involved}{}
-#'   \item{No__of_Casualties_Injured}{}
+#'   \item{No_of_Vehicles_Involved}{}
+#'   \item{No_of_Casualties_Injured}{}
 #'   \item{Grid_E}{}
 #'   \item{Grid_N}{}
 #'   \item{Date}{}
@@ -39,6 +38,7 @@
 #'   \item{Type_of_Collision_with_cycle}{}
 #'   \item{Structure_Type}{}
 #'   \item{Road_Hierarchy}{}
+#'   \item{Road_Ownership}{}
 #'   ...
 #' }
 #' @source \url{https://www.td.gov.hk/}

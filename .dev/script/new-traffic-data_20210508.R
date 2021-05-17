@@ -195,7 +195,13 @@ hk_accidents_new_cleaned_labelled <-
   
   # Replace old Road Classification with new ------------------------------
   select(-Road_Classification) %>%
-  rename(Road_Classification = "Road_Classification_v2")
+  rename(Road_Classification = "Road_Classification_v2") %>%
+  rename(Road_Ownership = "Road_Classification") %>%
+  
+  # Final variable name cleaning ------------------------------------------
+  rename(No_of_Vehicles_Involved = "No__of_Vehicles_Involved",
+         No_of_Casualties_Injured = "No__of_Casualties_Injured")
+  
 
 
 # interactive tests -------------------------------------------------------
