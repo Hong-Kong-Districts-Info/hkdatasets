@@ -39,10 +39,9 @@ A data frame with 95821 rows and 21 variables:
 \item{Second_Street_Name}{}
 \item{Road_Type}{}
 \item{Cycle_Type}{}
-\item{Type_of_Collision_v2}{}
+\item{Type_of_Collision_with_cycle}{}
 \item{Structure_Type}{}
-\item{Road_Class_L}{}
-\item{Road_Classification_v2}{}
+\item{Road_Hierarchy}{}
 ...
 }
 }

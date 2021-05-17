@@ -36,10 +36,9 @@
 #'   \item{Second_Street_Name}{}
 #'   \item{Road_Type}{}
 #'   \item{Cycle_Type}{}
-#'   \item{Type_of_Collision_v2}{}
+#'   \item{Type_of_Collision_with_cycle}{}
 #'   \item{Structure_Type}{}
-#'   \item{Road_Class_L}{}
-#'   \item{Road_Classification_v2}{}
+#'   \item{Road_Hierarchy}{}
 #'   ...
 #' }
 #' @source \url{https://www.td.gov.hk/}

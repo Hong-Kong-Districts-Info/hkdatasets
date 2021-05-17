@@ -155,9 +155,6 @@ hk_accidents_new_cleaned_unlabelled <-
 
 hk_accidents_new_cleaned_labelled <-
   hk_accidents_new_cleaned_unlabelled %>%
- # left_join(
- #   rename(t_A1_street_name, Street_Name = "Description"),
-  #  by = c("Street_nam" = "Code")) %>%
   mutate(Street_Name = look_up(Street_nam, dictionary = t_A1_street_name)) %>%
   mutate(Second_Street_Name = look_up(Second_str, dictionary = t_A1_street_name)) %>%
   mutate(Overtaking = look_up(Overtaking, dictionary = t_Overtaking)) %>%
@@ -169,7 +166,7 @@ hk_accidents_new_cleaned_labelled <-
   mutate(Road_Class_L = look_up(RD_Class_L, dictionary = t_Road_class_L)) %>%
   mutate(Road_Classification_v2 = look_up(Road_class, dictionary = t_Road_class)) %>%
   
-  # Remove old names
+  # Remove old names ------------------------------------------------------
   select( 
     -Street_nam,
     -Second_str,
@@ -181,18 +178,24 @@ hk_accidents_new_cleaned_labelled <-
     -Road_class
   ) %>%
   
-  # Rename new variables
-  rename(Precise_Location = Precise_lo) %>%
-  rename(Accident = Accident_a) %>%
-  rename(Junction_Type = Junction_t) %>%
-  rename(Crossing_Control = Whether_at) %>%
-  rename(Crossing_Type = Type_of_Cr) %>%
+  # Rename new variables --------------------------------------------------
+  rename(Precise_Location = "Precise_lo") %>%
+  rename(Accident = "Accident_a") %>%
+  rename(Junction_Type = "Junction_t") %>%
+  rename(Crossing_Control = "Whether_at") %>%
+  rename(Crossing_Type = "Type_of_Cr") %>%
+  rename(Type_of_Collision_with_cycle = "Type_of_Collision_v2") %>%
+  rename(Road_Hierarchy = "Road_Class_L") %>%
 
-  # Rename rows with value "n.a." to "NA"
+  # Rename rows with value "n.a." to "NA" ---------------------------------
   mutate(Junction_Type = case_when(Junction_Type == "n.a." ~ "NA",
                                    TRUE ~ Junction_Type)) %>%
   mutate(Crossing_Type = case_when(Crossing_Type == "n.a." ~ "NA",
-                                 TRUE ~ Junction_Type))
+                                 TRUE ~ Junction_Type)) %>%
+  
+  # Replace old Road Classification with new ------------------------------
+  select(-Road_Classification) %>%
+  rename(Road_Classification = "Road_Classification_v2")
 
 
 # interactive tests -------------------------------------------------------
@@ -210,3 +213,10 @@ table(hk_casualties_new$Pedestri_1) # Pedestrian location
 table(hk_casualties_new$Pedestri_2) # Pedestrian special circumstances
 table(hk_casualties_new$Pedestrian) # Pedestrian action
 table(hk_casualties_new$X_Pedestri) # ???
+
+
+# Additional cleaning 17 May 2021 ------------------------------------------
+
+hk_accidents_new_cleaned_labelled %>% glimpse()
+hk_accidents <- hk_accidents_new_cleaned_labelled # overwrite
+usethis::use_data(hk_accidents, overwrite = TRUE)
