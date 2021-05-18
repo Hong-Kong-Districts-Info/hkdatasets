@@ -180,13 +180,15 @@ mutate(
   ) %>%
   
   # Rename new variables --------------------------------------------------
-  rename(Precise_Location = "Precise_lo") %>%
-  rename(Accident = "Accident_a") %>%
-  rename(Junction_Type = "Junction_t") %>%
-  rename(Crossing_Control = "Whether_at") %>%
-  rename(Crossing_Type = "Type_of_Cr") %>%
-  rename(Type_of_Collision_with_cycle = "Type_of_Collision_v2") %>%
-  rename(Road_Hierarchy = "Road_Class_L") %>%
+rename(
+  Precise_Location = "Precise_lo",
+  Accident = "Accident_a",
+  Junction_Type = "Junction_t",
+  Crossing_Control = "Whether_at",
+  Crossing_Type = "Type_of_Cr",
+  Type_of_Collision_with_cycle = "Type_of_Collision_v2",
+  Road_Hierarchy = "Road_Class_L"
+  ) %>%
 
   # Rename rows with value "n.a." to "NA" ---------------------------------
   mutate(
