@@ -155,16 +155,17 @@ hk_accidents_new_cleaned_unlabelled <-
 
 hk_accidents_new_cleaned_labelled <-
   hk_accidents_new_cleaned_unlabelled %>%
-  mutate(Street_Name = look_up(Street_nam, dictionary = t_A1_street_name)) %>%
-  mutate(Second_Street_Name = look_up(Second_str, dictionary = t_A1_street_name)) %>%
-  mutate(Overtaking = look_up(Overtaking, dictionary = t_Overtaking)) %>%
-  mutate(Within_70m = look_up(Within_70m, dictionary =  t_Within_70m)) %>%
-  mutate(Road_Type = look_up(Road_type_, dictionary = t_Road_type_)) %>%
-  mutate(Cycle_Type = look_up(Pedal_cycl, dictionary = t_Ped_Cycle)) %>%
-  mutate(Type_of_Collision_v2 = look_up(TypeOfCo_P, dictionary = t_Collision_Type)) %>%
-  mutate(Structure_Type = look_up(Struc_Type, dictionary = t_Struc_Type)) %>%
-  mutate(Road_Class_L = look_up(RD_Class_L, dictionary = t_Road_class_L)) %>%
-  mutate(Road_Classification_v2 = look_up(Road_class, dictionary = t_Road_class)) %>%
+mutate(
+  Street_Name = look_up(Street_nam, dictionary = t_A1_street_name),
+  Overtaking = look_up(Overtaking, dictionary = t_Overtaking),
+  Within_70m = look_up(Within_70m, dictionary =  t_Within_70m),
+  Road_Type = look_up(Road_type_, dictionary = t_Road_type_),
+  Cycle_Type = look_up(Pedal_cycl, dictionary = t_Ped_Cycle),
+  Type_of_Collision_v2 = look_up(TypeOfCo_P, dictionary = t_Collision_Type),
+  Structure_Type = look_up(Struc_Type, dictionary = t_Struc_Type),
+  Road_Class_L = look_up(RD_Class_L, dictionary = t_Road_class_L),
+  Road_Classification_v2 = look_up(Road_class, dictionary = t_Road_class)
+) %>%
   
   # Remove old names ------------------------------------------------------
   select( 
