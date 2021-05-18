@@ -34,6 +34,34 @@ hk_casualties_new <-
 # 
 # setdiff(names(hk_casualties_new), names(hkdatasets::hk_casualties))
 # setdiff(names(hkdatasets::hk_casualties), names(hk_casualties_new))
+# intersect(names(hkdatasets::hk_casualties), names(hk_casualties_new))
+
+# tibble(
+#   old = hk_casualties$Serial_No_,
+#   new = hk_casualties_new$Serial_No_  
+# ) %>%
+#   mutate(equal = (old == new)) %>%
+#   count(equal)
+# 
+# tibble(
+#   old = hk_casualties$Casualty_Age,
+#   new = hk_casualties_new$Casualty_A  
+# ) %>%
+#   mutate(equal = (old == new)) %>%
+#   count(equal)
+
+# Checks of unique identifier in `hk_casualties_new`
+#
+# hk_casualties_new %>%
+#   mutate(ID = paste0(
+#     Year,
+#     Serial_No_,
+#     Casualty_A,
+#     Casualty_S
+#   )) %>%
+#   summarise(n = n_distinct(ID))
+
+
 
 # dataCompareR ------------------------------------------------------------
 
@@ -72,44 +100,66 @@ hk_casualties_new_cleaned_unlabelled <-
   hk_casualties %>%
   left_join(
     # New columns
-    select(
-      hk_casualties_new,
-      
-      # variables for joining ---------------------------------------
-      Serial_No_, # For joining
-      Year, # For joining
-      
-      # New variables with code frames identified --------------------
-      Casualty_A,
-      Casualty_S,
-      Degree_of_,
-      Role_of_Ca,
-      Location_o,
-      Vehicle_Cl,
-      Pedestrian,
-      Pedestri_1,
-      Pedestri_2,
-      Grid_E,
-      Grid_N,
-      X_Pedestri,
-      X_Duplicat,
-      Pedal_cycl
-    ),
-    by = c("Serial_No_", "Year")
+    hk_casualties_new %>%
+      select(
+        # variables for joining ---------------------------------------
+        Serial_No_, 
+        Year, 
+        Casualty_Age = "Casualty_A", 
+        Casualty_Sex = "Casualty_S",
+        
+        # New variables with code frames identified --------------------
+        Degree_of_,
+        Role_of_Ca,
+        Location_o,
+        Vehicle_Cl,
+        Pedestrian,
+        Pedestri_1,
+        Pedestri_2,
+        Grid_E,
+        Grid_N,
+        X_Pedestri,
+        X_Duplicat,
+        Pedal_cycl
+        ) %>%
+      mutate(Casualty_Sex = case_when(
+        Casualty_Sex == 1 ~ "Male",
+        Casualty_Sex == 2 ~ "Female",
+        Casualty_Sex == 9 ~ "Not known")
+        ),
+    by = c(
+      "Serial_No_",
+      "Year",
+      "Casualty_Age",
+      "Casualty_Sex")
   )
 
 hk_casualties_new_cleaned_labelled <-
   hk_casualties_new_cleaned_unlabelled %>%
   
-  # To logical 
+  # To logical -----------------------------------------------------------
   mutate(
     across(
       .cols = starts_with("Location_of_Injury_"),
       .fns = ~ifelse(. == "Yes", TRUE, FALSE)
     )
-  )
+  ) %>%
+  
+  # More intuitive names -------------------------------------------------
+  rename(
+    Casualty_Sex_2 = "Casualty_S", # Retain for checks
+    Ped_Location = "Pedestri_1",
+    Ped_Circumstances = "Pedestri_2",
+    Ped_Action = "Pedestrian"
+  ) %>%
+  
+  # Labels ---------------------------------------------------------------
 
-glimpse(hk_casualties_new_cleaned_labelled)
+  mutate(
+    Ped_Location = look_up(Ped_Location, dictionary = t_Ped_Location),
+    Ped_Circumstances = look_up(Ped_Circumstances, dictionary = t_Ped_Special)
+    # Ped_Action = look_up(Ped_Action, dictionary = t_Ped_Cycle),
+  )
 
 # interactive tests -------------------------------------------------------
 
@@ -117,3 +167,13 @@ table(hk_casualties_new$Pedestri_1) # Pedestrian location
 table(hk_casualties_new$Pedestri_2) # Pedestrian special circumstances
 table(hk_casualties_new$Pedestrian) # Pedestrian action
 table(hk_casualties_new$X_Pedestri) # ???
+
+hk_casualties_new_cleaned_labelled %>% count(Casualty_Sex, Casualty_Sex_2)
+hk_casualties_new_cleaned_labelled %>% count(Casualty_Age, Casualty_Age_2)
+
+# Overwrite dataset for hk_casualties ------------------------------------- 
+glimpse(hk_casualties_new_cleaned_labelled)
+skimr::skim(hk_casualties_new_cleaned_labelled)
+
+hk_casualties <- hk_casualties_new_cleaned_labelled # overwrite
+usethis::use_data(hk_casualties, overwrite = TRUE)
