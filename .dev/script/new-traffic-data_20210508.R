@@ -203,6 +203,13 @@ rename(
   rename(Road_Classification = "Road_Classification_v2") %>%
   rename(Road_Ownership = "Road_Classification") %>%
   
+  # To logical where binary -----------------------------------------------
+  mutate(
+    Accident = ifelse(Accident == "Yes", TRUE, FALSE),
+    Within_70m = ifelse(Within_70m == "Yes", TRUE, FALSE),
+    Hit_and_Run = ifelse(Hit_and_Run == "Yes", TRUE, FALSE)
+    ) %>%
+  
   # Final variable name cleaning ------------------------------------------
   rename(No_of_Vehicles_Involved = "No__of_Vehicles_Involved",
          No_of_Casualties_Injured = "No__of_Casualties_Injured")
@@ -215,7 +222,14 @@ table(hk_accidents$Road_Classification)
 table(hk_accidents_new$RD_Class_L)
 table(hk_accidents_new$Road_class) # Slightly different from Road Classification
 table(hk_accidents_new$Road_type_) # Road type - completely new
+
 table(hk_accidents_new_cleaned_labelled$Structure_Type)
+
+table(hk_accidents_new_cleaned_labelled$Accident) # Boolean
+table(hk_accidents_new_cleaned_labelled$Within_70m) # Boolean
+table(hk_accidents_new_cleaned_labelled$Hit_and_Run) # Boolean
+
+table(hk_accidents_new_cleaned_labelled$Overtaking)
 
 # TODO: Check for missing values for all string variables
 explore_vars_accidents <-
