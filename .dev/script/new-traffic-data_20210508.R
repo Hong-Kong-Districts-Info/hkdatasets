@@ -189,10 +189,10 @@ mutate(
   rename(Road_Hierarchy = "Road_Class_L") %>%
 
   # Rename rows with value "n.a." to "NA" ---------------------------------
-  mutate(Junction_Type = case_when(Junction_Type == "n.a." ~ "NA",
-                                   TRUE ~ Junction_Type)) %>%
-  mutate(Crossing_Type = case_when(Crossing_Type == "n.a." ~ "NA",
-                                 TRUE ~ Junction_Type)) %>%
+  mutate(
+    Junction_Type = ifelse(Junction_Type == "n.a.", NA, Junction_Type),
+    Crossing_Type = ifelse(Crossing_Type == "n.a.", NA, Crossing_Type)
+  ) %>%
   mutate(Road_Hierarchy = ifelse(Road_Hierarchy == "N.A.", NA, Road_Hierarchy))
   # Replace old Road Classification with new ------------------------------
   select(-Road_Classification) %>%
