@@ -25,16 +25,6 @@ hk_accidents_new <-
     here("data-raw",
          "FurtherData_Accident20142019_joined_210201.xlsx"))
 
-hk_casualties_new <-
-  read_xlsx(
-    here("data-raw",
-         "FurtherData_Casualty20142019_Joined_201216.xlsx"))
-
-hk_vehicles_new <-
-  read_xlsx(
-    here("data-raw",
-         "FurtherData_Vehicle20142019_Joined_201216.xlsx"))
-
 # labels for matching up to new data
 # read each individual data frame to global environment
 code_sheets_path <-
@@ -58,24 +48,6 @@ code_sheets %>%
 # setdiff(names(hk_accidents_new), names(hkdatasets::hk_accidents))
 # setdiff(names(hkdatasets::hk_accidents), names(hk_accidents_new))
 
-
-# casualties check --------------------------------------------------------
-
-# hk_casualties_new %>% glimpse()
-# hkdatasets::hk_casualties %>% glimpse()
-# 
-# setdiff(names(hk_casualties_new), names(hkdatasets::hk_casualties))
-# setdiff(names(hkdatasets::hk_casualties), names(hk_casualties_new))
-
-
-# vehicles check ----------------------------------------------------------
-
-# hk_vehicles_new %>% glimpse()
-# hkdatasets::hk_vehicles %>% glimpse()
-# 
-# setdiff(names(hk_vehicles_new), names(hkdatasets::hk_vehicles))
-# setdiff(names(hkdatasets::hk_vehicles), names(hk_vehicles_new))
-
 # dataCompareR ------------------------------------------------------------
 
 # # hk_accidents
@@ -90,29 +62,6 @@ code_sheets %>%
 #     paste("Comparison of hk_accidents old and new", wpa::tstamp())
 #   )
 # 
-# # hk_casualties
-# compare_cas <-
-#   dataCompareR::rCompare(
-#     dfA = hk_casualties,
-#     dfB = hk_casualties_new
-#   )
-# 
-# compare_cas %>%
-#   saveReport(
-#     paste("Comparison of hk_casualties old and new", wpa::tstamp())
-#     )
-# 
-# # hk_vehicles
-# compare_veh <-
-#   dataCompareR::rCompare(
-#     dfA = hk_vehicles,
-#     dfB = hk_vehicles_new
-#   )
-# 
-# compare_veh %>%
-#   saveReport(
-#     paste("Comparison of hk_vehicles old and new", wpa::tstamp())
-#   )
 
 # data clean --------------------------------------------------------------
 # this chunk does two things:
@@ -129,6 +78,8 @@ look_up <- function(x,
 # look_up(iris$Species,
 #         c("virginica", "versicolor", "setosa"),
 #         replace = c("tum", "de", "da"))
+
+# hk_accidents ------------------------------------------------------------
 
 hk_accidents_new_cleaned_unlabelled <-
   hk_accidents %>%
@@ -161,7 +112,7 @@ hk_accidents_new_cleaned_unlabelled <-
       Whether_at, # E.g. No crossing control, On a crossing control, etc.
       Type_of_Cr, # E.g. Footbridge/Subway, Traffic signal, Zebra, etc.
       
-      ),
+    ),
     by = c("Date", "Serial_No_", "Year")
   )
   
@@ -247,8 +198,6 @@ hk_accidents_new_cleaned_labelled <-
   rename(No_of_Vehicles_Involved = "No__of_Vehicles_Involved",
          No_of_Casualties_Injured = "No__of_Casualties_Injured")
   
-
-
 # interactive tests -------------------------------------------------------
 
 table(hk_accidents$Road_Classification)
@@ -275,15 +224,6 @@ explore_vars_accidents <-
 
 explore_vars_accidents %>%
   purrr::map(~str_extract(., "n\\.a"))
-
-table(hk_vehicles_new$Main_vehic) # Main vehicle manouvre
-table(hk_vehicles_new$Vehicle_co) # Vehicle collision with
-table(hk_vehicles_new$First_poin) # First point of impact
-
-table(hk_casualties_new$Pedestri_1) # Pedestrian location
-table(hk_casualties_new$Pedestri_2) # Pedestrian special circumstances
-table(hk_casualties_new$Pedestrian) # Pedestrian action
-table(hk_casualties_new$X_Pedestri) # ???
 
 
 # Additional cleaning 17 May 2021 ------------------------------------------
