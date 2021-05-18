@@ -7,15 +7,15 @@ library(dataCompareR)
 
 # custom functions for hour minute treatment ------------------------------
 
-to_hm <- function(x){
-  
-  h_str <- as.numeric(substr(x, start = 1, stop = 2))
-  m_str <- as.numeric(substr(x, start = 3, stop = 4))
-  
-  hms::hms(hours = h_str,
-           minutes = m_str)
-  
-}
+# to_hm <- function(x){
+#   
+#   h_str <- as.numeric(substr(x, start = 1, stop = 2))
+#   m_str <- as.numeric(substr(x, start = 3, stop = 4))
+#   
+#   hms::hms(hours = h_str,
+#            minutes = m_str)
+#   
+# }
 
 
 # load data ---------------------------------------------------------------
@@ -52,67 +52,67 @@ code_sheets %>%
 
 # accidents check ---------------------------------------------------------
 
-hk_accidents_new %>% glimpse()
-hkdatasets::hk_accidents %>% glimpse()
-
-setdiff(names(hk_accidents_new), names(hkdatasets::hk_accidents))
-setdiff(names(hkdatasets::hk_accidents), names(hk_accidents_new))
+# hk_accidents_new %>% glimpse()
+# hkdatasets::hk_accidents %>% glimpse()
+# 
+# setdiff(names(hk_accidents_new), names(hkdatasets::hk_accidents))
+# setdiff(names(hkdatasets::hk_accidents), names(hk_accidents_new))
 
 
 # casualties check --------------------------------------------------------
 
-hk_casualties_new %>% glimpse()
-hkdatasets::hk_casualties %>% glimpse()
-
-setdiff(names(hk_casualties_new), names(hkdatasets::hk_casualties))
-setdiff(names(hkdatasets::hk_casualties), names(hk_casualties_new))
+# hk_casualties_new %>% glimpse()
+# hkdatasets::hk_casualties %>% glimpse()
+# 
+# setdiff(names(hk_casualties_new), names(hkdatasets::hk_casualties))
+# setdiff(names(hkdatasets::hk_casualties), names(hk_casualties_new))
 
 
 # vehicles check ----------------------------------------------------------
 
-hk_vehicles_new %>% glimpse()
-hkdatasets::hk_vehicles %>% glimpse()
-
-setdiff(names(hk_vehicles_new), names(hkdatasets::hk_vehicles))
-setdiff(names(hkdatasets::hk_vehicles), names(hk_vehicles_new))
+# hk_vehicles_new %>% glimpse()
+# hkdatasets::hk_vehicles %>% glimpse()
+# 
+# setdiff(names(hk_vehicles_new), names(hkdatasets::hk_vehicles))
+# setdiff(names(hkdatasets::hk_vehicles), names(hk_vehicles_new))
 
 # dataCompareR ------------------------------------------------------------
 
-# hk_accidents
-compare_acc <-
-  dataCompareR::rCompare(
-    dfA = hk_accidents,
-    dfB = hk_accidents_new
-  )
-
-compare_acc %>%
-  saveReport(
-    paste("Comparison of hk_accidents old and new", wpa::tstamp())
-  )
-
-# hk_casualties
-compare_cas <-
-  dataCompareR::rCompare(
-    dfA = hk_casualties,
-    dfB = hk_casualties_new
-  )
-
-compare_cas %>%
-  saveReport(
-    paste("Comparison of hk_casualties old and new", wpa::tstamp())
-    )
-
-# hk_vehicles
-compare_veh <-
-  dataCompareR::rCompare(
-    dfA = hk_vehicles,
-    dfB = hk_vehicles_new
-  )
-
-compare_veh %>%
-  saveReport(
-    paste("Comparison of hk_vehicles old and new", wpa::tstamp())
-  )
+# # hk_accidents
+# compare_acc <-
+#   dataCompareR::rCompare(
+#     dfA = hk_accidents,
+#     dfB = hk_accidents_new
+#   )
+# 
+# compare_acc %>%
+#   saveReport(
+#     paste("Comparison of hk_accidents old and new", wpa::tstamp())
+#   )
+# 
+# # hk_casualties
+# compare_cas <-
+#   dataCompareR::rCompare(
+#     dfA = hk_casualties,
+#     dfB = hk_casualties_new
+#   )
+# 
+# compare_cas %>%
+#   saveReport(
+#     paste("Comparison of hk_casualties old and new", wpa::tstamp())
+#     )
+# 
+# # hk_vehicles
+# compare_veh <-
+#   dataCompareR::rCompare(
+#     dfA = hk_vehicles,
+#     dfB = hk_vehicles_new
+#   )
+# 
+# compare_veh %>%
+#   saveReport(
+#     paste("Comparison of hk_vehicles old and new", wpa::tstamp())
+#   )
 
 # data clean --------------------------------------------------------------
 # this chunk does two things:
@@ -225,7 +225,23 @@ hk_accidents_new_cleaned_labelled <-
     ) %>%
   
   # turn time to date/time instead of string -----------------------------
-  mutate(Time = to_hm(Time)) %>%
+  mutate(Date_Time = as.POSIXct(
+    strptime(
+      paste0(Date, " ", Time),
+      format = "%Y-%m-%d %H%M",
+      tz = "Asia/Hong_Kong"
+    )
+  )) %>%
+  # Remove redundant columns
+  select(
+    -Date,
+    -Time
+    ) %>%
+  # Reorder
+  select(
+    Date_Time,
+    everything()
+  ) %>%
   
   # Final variable name cleaning ------------------------------------------
   rename(No_of_Vehicles_Involved = "No__of_Vehicles_Involved",
@@ -247,10 +263,8 @@ table(hk_accidents_new_cleaned_labelled$Within_70m) # Boolean
 table(hk_accidents_new_cleaned_labelled$Hit_and_Run) # Boolean
 
 table(hk_accidents_new_cleaned_labelled$Overtaking) # All blanks
+hk_accidents_new_cleaned_labelled$Date_Time
 
-hk_accidents_new_cleaned_labelled %>%
-  .$Time %>%
-  to_hm()
 
 
 # TODO: Check for missing values for all string variables

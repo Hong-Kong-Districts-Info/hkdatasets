@@ -4,6 +4,7 @@
 #'
 #' @format A data frame with 95821 rows and 21 variables:
 #' \describe{
+#'   \item{Date_Time}{}
 #'   \item{OBJECTID}{}
 #'   \item{Year}{}
 #'   \item{Serial_No_}{}
@@ -20,8 +21,6 @@
 #'   \item{No_of_Casualties_Injured}{}
 #'   \item{Grid_E}{}
 #'   \item{Grid_N}{}
-#'   \item{Date}{}
-#'   \item{Time}{}
 #'   \item{latitude}{}
 #'   \item{longitude}{}
 #'   \item{Overtaking}{}
