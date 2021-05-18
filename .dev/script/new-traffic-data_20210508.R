@@ -1,8 +1,22 @@
+# load wrangle packages ---------------------------------------------------
 library(tidyverse)
 library(readxl)
 library(here)
 library(hkdatasets)
 library(dataCompareR)
+
+# custom functions for hour minute treatment ------------------------------
+
+to_hm <- function(x){
+  
+  h_str <- as.numeric(substr(x, start = 1, stop = 2))
+  m_str <- as.numeric(substr(x, start = 3, stop = 4))
+  
+  hms::hms(hours = h_str,
+           minutes = m_str)
+  
+}
+
 
 # load data ---------------------------------------------------------------
 
@@ -151,7 +165,7 @@ hk_accidents_new_cleaned_unlabelled <-
     by = c("Date", "Serial_No_", "Year")
   )
   
-  # labelling ----------------------------------------------------------------
+# labelling ----------------------------------------------------------------
 
 hk_accidents_new_cleaned_labelled <-
   hk_accidents_new_cleaned_unlabelled %>%
@@ -180,15 +194,15 @@ hk_accidents_new_cleaned_labelled <-
   ) %>%
   
   # Rename new variables --------------------------------------------------
-rename(
-  Precise_Location = "Precise_lo",
-  Accident = "Accident_a",
-  Junction_Type = "Junction_t",
-  Crossing_Control = "Whether_at",
-  Crossing_Type = "Type_of_Cr",
-  Type_of_Collision_with_cycle = "Type_of_Collision_v2",
-  Road_Hierarchy = "Road_Class_L"
-  ) %>%
+  rename(
+    Precise_Location = "Precise_lo",
+    Accident = "Accident_a",
+    Junction_Type = "Junction_t",
+    Crossing_Control = "Whether_at",
+    Crossing_Type = "Type_of_Cr",
+    Type_of_Collision_with_cycle = "Type_of_Collision_v2",
+    Road_Hierarchy = "Road_Class_L"
+    ) %>%
 
   # Rename rows with value "n.a." to "NA" ---------------------------------
   mutate(
@@ -210,6 +224,9 @@ rename(
     Hit_and_Run = ifelse(Hit_and_Run == "Yes", TRUE, FALSE)
     ) %>%
   
+  # turn time to date/time instead of string -----------------------------
+  mutate(Time = to_hm(Time)) %>%
+  
   # Final variable name cleaning ------------------------------------------
   rename(No_of_Vehicles_Involved = "No__of_Vehicles_Involved",
          No_of_Casualties_Injured = "No__of_Casualties_Injured")
@@ -229,7 +246,12 @@ table(hk_accidents_new_cleaned_labelled$Accident) # Boolean
 table(hk_accidents_new_cleaned_labelled$Within_70m) # Boolean
 table(hk_accidents_new_cleaned_labelled$Hit_and_Run) # Boolean
 
-table(hk_accidents_new_cleaned_labelled$Overtaking)
+table(hk_accidents_new_cleaned_labelled$Overtaking) # All blanks
+
+hk_accidents_new_cleaned_labelled %>%
+  .$Time %>%
+  to_hm()
+
 
 # TODO: Check for missing values for all string variables
 explore_vars_accidents <-
