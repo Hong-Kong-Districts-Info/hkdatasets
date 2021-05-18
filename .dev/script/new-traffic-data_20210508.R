@@ -155,17 +155,17 @@ hk_accidents_new_cleaned_unlabelled <-
 
 hk_accidents_new_cleaned_labelled <-
   hk_accidents_new_cleaned_unlabelled %>%
-mutate(
-  Street_Name = look_up(Street_nam, dictionary = t_A1_street_name),
-  Overtaking = look_up(Overtaking, dictionary = t_Overtaking),
-  Within_70m = look_up(Within_70m, dictionary =  t_Within_70m),
-  Road_Type = look_up(Road_type_, dictionary = t_Road_type_),
-  Cycle_Type = look_up(Pedal_cycl, dictionary = t_Ped_Cycle),
-  Type_of_Collision_v2 = look_up(TypeOfCo_P, dictionary = t_Collision_Type),
-  Structure_Type = look_up(Struc_Type, dictionary = t_Struc_Type),
-  Road_Class_L = look_up(RD_Class_L, dictionary = t_Road_class_L),
-  Road_Classification_v2 = look_up(Road_class, dictionary = t_Road_class)
-) %>%
+  mutate(
+    Street_Name = look_up(Street_nam, dictionary = t_A1_street_name),
+    Overtaking = look_up(Overtaking, dictionary = t_Overtaking),
+    Within_70m = look_up(Within_70m, dictionary =  t_Within_70m),
+    Road_Type = look_up(Road_type_, dictionary = t_Road_type_),
+    Cycle_Type = look_up(Pedal_cycl, dictionary = t_Ped_Cycle),
+    Type_of_Collision_v2 = look_up(TypeOfCo_P, dictionary = t_Collision_Type),
+    Structure_Type = look_up(Struc_Type, dictionary = t_Struc_Type),
+    Road_Class_L = look_up(RD_Class_L, dictionary = t_Road_class_L),
+    Road_Classification_v2 = look_up(Road_class, dictionary = t_Road_class)
+  ) %>% 
   
   # Remove old names ------------------------------------------------------
   select( 
@@ -193,9 +193,11 @@ rename(
   # Rename rows with value "n.a." to "NA" ---------------------------------
   mutate(
     Junction_Type = ifelse(Junction_Type == "n.a.", NA, Junction_Type),
-    Crossing_Type = ifelse(Crossing_Type == "n.a.", NA, Crossing_Type)
+    Crossing_Type = ifelse(Crossing_Type == "n.a.", NA, Crossing_Type),
+    Road_Hierarchy = ifelse(Road_Hierarchy == "N.A.", NA, Road_Hierarchy),
+    Structure_Type = ifelse(Structure_Type == "N.A. (missing data or outliner)", NA, Structure_Type)
   ) %>%
-  mutate(Road_Hierarchy = ifelse(Road_Hierarchy == "N.A.", NA, Road_Hierarchy))
+  
   # Replace old Road Classification with new ------------------------------
   select(-Road_Classification) %>%
   rename(Road_Classification = "Road_Classification_v2") %>%
@@ -213,6 +215,16 @@ table(hk_accidents$Road_Classification)
 table(hk_accidents_new$RD_Class_L)
 table(hk_accidents_new$Road_class) # Slightly different from Road Classification
 table(hk_accidents_new$Road_type_) # Road type - completely new
+table(hk_accidents_new_cleaned_labelled$Structure_Type)
+
+# TODO: Check for missing values for all string variables
+explore_vars_accidents <-
+  hk_accidents_new_cleaned_labelled %>%
+  select(where(is_character)) %>%
+  purrr::map(~unique(.))
+
+explore_vars_accidents %>%
+  purrr::map(~str_extract(., "n\\.a"))
 
 table(hk_vehicles_new$Main_vehic) # Main vehicle manouvre
 table(hk_vehicles_new$Vehicle_co) # Vehicle collision with
@@ -226,6 +238,7 @@ table(hk_casualties_new$X_Pedestri) # ???
 
 # Additional cleaning 17 May 2021 ------------------------------------------
 
+## Overwrite dataset for hk_accidents 
 hk_accidents_new_cleaned_labelled %>% glimpse()
 hk_accidents <- hk_accidents_new_cleaned_labelled # overwrite
 usethis::use_data(hk_accidents, overwrite = TRUE)
