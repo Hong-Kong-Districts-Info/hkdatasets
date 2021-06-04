@@ -14,18 +14,18 @@ hk_casualties_new <-
 
 # labels for matching up to new data
 # read each individual data frame to global environment
-# code_sheets_path <-
-#   here("data-raw",
-#        "reformatted_Code table_v1.xlsx")
-# 
-# code_sheets <- excel_sheets(code_sheets_path)
-# 
-# code_sheets %>%
-#   purrr::map(function(sheet){ # iterate through each sheet name
-#     assign(x = paste0("t_", sheet), # prefixed variable names
-#            value = readxl::read_xlsx(path = code_sheets_path, sheet = sheet),
-#            envir = .GlobalEnv)
-#   })
+code_sheets_path <-
+  here("data-raw",
+       "reformatted_Code table_v1.xlsx")
+
+code_sheets <- excel_sheets(code_sheets_path)
+
+code_sheets %>%
+  purrr::map(function(sheet){ # iterate through each sheet name
+    assign(x = paste0("t_", sheet), # prefixed variable names
+           value = readxl::read_xlsx(path = code_sheets_path, sheet = sheet),
+           envir = .GlobalEnv)
+  })
 
 # casualties check --------------------------------------------------------
 
@@ -57,11 +57,18 @@ hk_casualties_new <-
 #     Year,
 #     Serial_No_,
 #     Casualty_A,
-#     Casualty_S
+#     Casualty_S,
+#     Degree_of_
 #   )) %>%
 #   summarise(n = n_distinct(ID))
 
-
+# NOTE:
+# unique identifiers are difficult to create, so instead an `cbind()` method 
+# will be used for combining the old and new datasets instead. This can be done
+# more neatly by fabricating an `OBJECTID` in `hk_casualties_new`. 
+# 
+# Checks to be done afterwards to ensure that the old and new rows have not 
+# been scrambled. 
 
 # dataCompareR ------------------------------------------------------------
 
@@ -96,46 +103,66 @@ look_up <- function(x,
 
 # hk_casualties -----------------------------------------------------------
 
+## interim renaming of `hk_casualties_new`
+hk_casualties_new2 <-
+  # New columns
+  hk_casualties_new %>%
+  
+    # Variables for checking --------------------------------------
+  select(
+    Serial_No_2 = "Serial_No_", 
+    Year2 = "Year", 
+    Casualty_Age2 = "Casualty_A", 
+    Casualty_Sex2 = "Casualty_S",
+    
+    # New variables with code frames identified --------------------
+    Degree_of_,
+    Role_of_Ca,
+    Location_o,
+    Vehicle_Cl,
+    Pedestrian,
+    Pedestri_1,
+    Pedestri_2,
+    Grid_E,
+    Grid_N,
+    X_Pedestri,
+    X_Duplicat,
+    Pedal_cycl
+  ) %>%
+  mutate(
+    Casualty_Sex2 = case_when(
+      Casualty_Sex2 == 1 ~ "Male",
+      Casualty_Sex2 == 2 ~ "Female",
+      Casualty_Sex2 == 9 ~ "Not known"),
+    OBJECTID = 1:nrow(.)
+  )
+
+## join two datasets  
 hk_casualties_new_cleaned_unlabelled <-
   hk_casualties %>%
   left_join(
-    # New columns
-    hk_casualties_new %>%
-      select(
-        # variables for joining ---------------------------------------
-        Serial_No_, 
-        Year, 
-        Casualty_Age = "Casualty_A", 
-        Casualty_Sex = "Casualty_S",
-        
-        # New variables with code frames identified --------------------
-        Degree_of_,
-        Role_of_Ca,
-        Location_o,
-        Vehicle_Cl,
-        Pedestrian,
-        Pedestri_1,
-        Pedestri_2,
-        Grid_E,
-        Grid_N,
-        X_Pedestri,
-        X_Duplicat,
-        Pedal_cycl
-        ) %>%
-      mutate(Casualty_Sex = case_when(
-        Casualty_Sex == 1 ~ "Male",
-        Casualty_Sex == 2 ~ "Female",
-        Casualty_Sex == 9 ~ "Not known")
-        ),
-    by = c(
-      "Serial_No_",
-      "Year",
-      "Casualty_Age",
-      "Casualty_Sex")
+    hk_casualties_new2,
+    by = "OBJECTID"
   )
+
+## checks
+# hk_casualties_new_cleaned_unlabelled %>% glimpse()
+# nrow(hk_casualties_new_cleaned_unlabelled) == nrow(hk_casualties)
+# hk_casualties_new_cleaned_unlabelled %>% count(Degree_of_, Degree_of_Injury)
+# hk_casualties_new_cleaned_unlabelled %>% count(Casualty_Age, Casualty_Age2)
+# hk_casualties_new_cleaned_unlabelled %>% count(Casualty_Sex, Casualty_Sex2)
+# hk_casualties_new_cleaned_unlabelled %>% count(Year, Year2)
+
 
 hk_casualties_new_cleaned_labelled <-
   hk_casualties_new_cleaned_unlabelled %>%
+  # Remove duplicates ---------------------------------------------------
+  select(
+    -Serial_No_2,
+    -Year2,
+    -Casualty_Age2,
+    -Casualty_Sex2
+  ) %>%
   
   # To logical -----------------------------------------------------------
   mutate(
@@ -147,7 +174,7 @@ hk_casualties_new_cleaned_labelled <-
   
   # More intuitive names -------------------------------------------------
   rename(
-    Casualty_Sex_2 = "Casualty_S", # Retain for checks
+    Casualty_Sex_2 = "Casualty_Sex", # Retain for checks
     Ped_Location = "Pedestri_1",
     Ped_Circumstances = "Pedestri_2",
     Ped_Action = "Pedestrian"
@@ -162,6 +189,7 @@ hk_casualties_new_cleaned_labelled <-
   )
 
 # interactive tests -------------------------------------------------------
+glimpse(hk_casualties_new_cleaned_labelled)
 
 table(hk_casualties_new$Pedestri_1) # Pedestrian location
 table(hk_casualties_new$Pedestri_2) # Pedestrian special circumstances
