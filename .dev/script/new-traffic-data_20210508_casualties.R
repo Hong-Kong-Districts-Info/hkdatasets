@@ -153,7 +153,6 @@ hk_casualties_new_cleaned_unlabelled <-
 # hk_casualties_new_cleaned_unlabelled %>% count(Casualty_Sex, Casualty_Sex2)
 # hk_casualties_new_cleaned_unlabelled %>% count(Year, Year2)
 
-
 hk_casualties_new_cleaned_labelled <-
   hk_casualties_new_cleaned_unlabelled %>%
   # Remove duplicates ---------------------------------------------------
@@ -161,7 +160,11 @@ hk_casualties_new_cleaned_labelled <-
     -Serial_No_2,
     -Year2,
     -Casualty_Age2,
-    -Casualty_Sex2
+    -Casualty_Sex2,
+    -Degree_of_, # Degree of Injury
+    -Location_o, # Location of Injury - already split out
+    -Role_of_Ca, # Role of Casualty
+    -Vehicle_Cl # Vehicle Class of Driver or Passenger
   ) %>%
   
   # To logical -----------------------------------------------------------
@@ -184,10 +187,17 @@ hk_casualties_new_cleaned_labelled <-
 
   mutate(
     Ped_Location = look_up(Ped_Location, dictionary = t_Ped_Location),
-    Ped_Circumstances = look_up(Ped_Circumstances, dictionary = t_Ped_Special)
-    # Ped_Action = look_up(Ped_Action, dictionary = t_Ped_Cycle),
-  )
+    Ped_Circumstances = look_up(Ped_Circumstances, dictionary = t_Ped_Special),
+    Ped_Action = look_up(Ped_Action, dictionary = t_Ped_Action)
+  ) %>%
+  
+  # Remove unnecessary columns -------------------------------------------
 
+ select(
+   -X_Pedestri,
+   -X_Duplicat
+ )
+  
 # interactive tests -------------------------------------------------------
 glimpse(hk_casualties_new_cleaned_labelled)
 
