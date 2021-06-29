@@ -175,12 +175,22 @@ hk_casualties_new_cleaned_labelled <-
     )
   ) %>%
   
+  # Hard code ------------------------------------------------------------
+
+  mutate(
+    Pedal_cycl = case_when(
+      Pedal_cycl == 0 ~ "Others",
+      Pedal_cycl == 1 ~ "Pedal Cycle",
+      Pedal_cycl == 2 ~ "Pedal Motorcycle",
+    )
+  ) %>%
+  
   # More intuitive names -------------------------------------------------
-  rename(
-    Casualty_Sex_2 = "Casualty_Sex", # Retain for checks
+  rename( # Retain for checks
     Ped_Location = "Pedestri_1",
     Ped_Circumstances = "Pedestri_2",
-    Ped_Action = "Pedestrian"
+    Ped_Action = "Pedestrian",
+    Pedal_cycle = "Pedal_cycl"
   ) %>%
   
   # Labels ---------------------------------------------------------------
@@ -205,6 +215,10 @@ table(hk_casualties_new$Pedestri_1) # Pedestrian location
 table(hk_casualties_new$Pedestri_2) # Pedestrian special circumstances
 table(hk_casualties_new$Pedestrian) # Pedestrian action
 table(hk_casualties_new$X_Pedestri) # ???
+
+hk_casualties_new_cleaned_labelled %>%
+  select(where(is.character)) %>%
+  purrr::map(~table(.))
 
 hk_casualties_new_cleaned_labelled %>% count(Casualty_Sex, Casualty_Sex_2)
 hk_casualties_new_cleaned_labelled %>% count(Casualty_Age, Casualty_Age_2)
