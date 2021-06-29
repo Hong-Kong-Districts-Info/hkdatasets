@@ -20,6 +20,7 @@
 #'   \item{Pedestrian_Action}{}
 #'   \item{Vehicle_Class_of_Driver_or_Pass}{}
 #'   \item{Ped_Action}{}
+#'   \item{Ped_Location}{}
 #'   \item{Ped_Circumstances}{}
 #'   \item{Grid_E}{}
 #'   \item{Grid_N}{}
