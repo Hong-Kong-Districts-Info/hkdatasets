@@ -2,7 +2,7 @@
 #'
 #' A dataset containing traffic accidents between 2014 and 2019.
 #'
-#' @format A data frame with 95821 rows and 21 variables:
+#' @format A data frame with 95821 rows and 33 variables:
 #' \describe{
 #'   \item{Date_Time}{}
 #'   \item{OBJECTID}{}
@@ -31,7 +31,6 @@
 #'   \item{Crossing_Control}{}
 #'   \item{Crossing_Type}{}
 #'   \item{Street_Name}{}
-#'   \item{Second_Street_Name}{}
 #'   \item{Road_Type}{}
 #'   \item{Cycle_Type}{}
 #'   \item{Type_of_Collision_with_cycle}{}
