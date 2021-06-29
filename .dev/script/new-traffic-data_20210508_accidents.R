@@ -231,4 +231,9 @@ explore_vars_accidents %>%
 ## Overwrite dataset for hk_accidents 
 hk_accidents_new_cleaned_labelled %>% glimpse()
 hk_accidents <- hk_accidents_new_cleaned_labelled # overwrite
-usethis::use_data(hk_accidents, overwrite = TRUE)
+
+usethis::use_data(
+  hk_accidents,
+  internal = TRUE, # Lazy loading
+  overwrite = TRUE
+  )
