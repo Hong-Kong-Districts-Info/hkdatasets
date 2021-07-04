@@ -59,21 +59,45 @@ setdiff(names(hkdatasets::hk_vehicles), names(hk_vehicles_new))
 #'  - `Pedal_cycl`
 #'  - `Pedal_col`
 
+# check old and new are row-by-row matches --------------------------------
 
-# dataCompareR ------------------------------------------------------------
+data.frame(
+  old = hk_vehicles$Serial_No_,
+  new = hk_vehicles_new$Serial_No_
+  ) %>%
+  mutate(IsSame = (old == new)) %>%
+  filter(IsSame == FALSE)
 
-# # hk_vehicles
-# compare_veh <-
-#   dataCompareR::rCompare(
-#     dfA = hk_vehicles,
-#     dfB = hk_vehicles_new
-#   )
-# 
-# compare_veh %>%
-#   saveReport(
-#     paste("Comparison of hk_vehicles old and new", wpa::tstamp())
-#   )
+## not true
 
+# create unique row IDs ---------------------------------------------------
+
+hk_vehicles_new %>%
+  mutate(UniqueID = paste(
+    Serial_No_,
+    Year,
+    Driver_Age,
+    Driver_Sex,
+    X_Year_of_,
+    Vehicle_Cl,
+    Severity_o
+    ),
+    sep = "-") %>%
+  summarise(
+    nd_UniqueID = n_distinct(UniqueID),
+    nrow = nrow(.)
+  )
+
+# using all unique columns do not yield a unique ID
+
+hk_vehicles_new %>%
+  mutate(IsDup = duplicated(.)) %>%
+  filter(IsDup == TRUE)
+  
+# There are 186 rows that are duplicated in the new data. 
+
+# FINAL APPROACH:
+# Clean dataset from scratch to prevent mismatch
 # data clean --------------------------------------------------------------
 # this chunk does two things:
 # 1. join new variables up to the old datasets
@@ -95,4 +119,29 @@ look_up <- function(x,
 table(hk_vehicles_new$Main_vehic) # Main vehicle manouvre
 table(hk_vehicles_new$Vehicle_co) # Vehicle collision with
 table(hk_vehicles_new$First_poin) # First point of impact
+
+# Cleaning new dataset ----------------------------------------------------
+
+hk_vehicles_new %>%
+  
+  # create OBJECTID ----------------------------------------------
+  mutate(OBJECTID = nrow(.)) %>%
+  select(OBJECTID, everything()) %>%
+  
+  # rename columns -----------------------------------------------
+  rename(
+    Vehicle_Class = "Vehicle_Cl",
+    Severity_of_Accident = "Severity_o",
+    Year_of_Manufacture = "X_Year_of_"
+  ) %>%
+  
+  # labels -------------------------------------------------------
+  mutate(
+    Vehicle_Class = look_up(Vehicle_Class, dictionary = t_Vehicle_Class),
+    Severity_of_Accident = look_up(Severity_of_Accident, dictionary = t_Sev_of),
+    Ped_Action = look_up(Ped_Action, dictionary = t_Ped_Action)
+  ) %>%
+  
+  # variable type ------------------------------------------------
+  mutate(Year_of_Manufacture = as.character(Year_of_Manufacture))
 
