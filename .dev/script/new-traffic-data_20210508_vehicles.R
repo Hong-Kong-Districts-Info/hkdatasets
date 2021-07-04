@@ -121,27 +121,65 @@ table(hk_vehicles_new$Vehicle_co) # Vehicle collision with
 table(hk_vehicles_new$First_poin) # First point of impact
 
 # Cleaning new dataset ----------------------------------------------------
+# TODO: `Pedal_col` left out 
 
-hk_vehicles_new %>%
+hk_vehicles_new_cleaned_labelled <-
+  hk_vehicles_new %>%
   
   # create OBJECTID ----------------------------------------------
-  mutate(OBJECTID = nrow(.)) %>%
+  mutate(OBJECTID = 1:nrow(.)) %>%
   select(OBJECTID, everything()) %>%
   
   # rename columns -----------------------------------------------
   rename(
     Vehicle_Class = "Vehicle_Cl",
     Severity_of_Accident = "Severity_o",
-    Year_of_Manufacture = "X_Year_of_"
+    Year_of_Manufacture = "X_Year_of_",
+    Vehicle_Collision = "Vehicle_co",
+    First_point = "First_poin",
+    Main_vehicle = "Main_vehic",
+    Pedal_cycle = "Pedal_cycl"
   ) %>%
   
   # labels -------------------------------------------------------
   mutate(
     Vehicle_Class = look_up(Vehicle_Class, dictionary = t_Vehicle_Class),
     Severity_of_Accident = look_up(Severity_of_Accident, dictionary = t_Sev_of),
-    Ped_Action = look_up(Ped_Action, dictionary = t_Ped_Action)
-  ) %>%
+    Vehicle_Collision = look_up(Vehicle_Collision, dictionary = t_Vehicle_co),
+    First_point = look_up(First_point, dictionary = t_First_poin),
+    Main_vehicle = look_up(Main_vehicle, dictionary = t_Main_vehic),
+    Pedal_cycle = look_up(Pedal_cycle, dictionary = t_Ped_Cycle),
+    Driver_Sex = case_when(
+      Driver_Sex == 1 ~ "Male",
+      Driver_Sex == 2 ~ "Female",
+      Driver_Sex == 9 ~ "Not known"),
+    ) %>%
+    # Pedal_col = look_up(Pedal_col, dictionary = t_Ped_Cycle)
+  
   
   # variable type ------------------------------------------------
-  mutate(Year_of_Manufacture = as.character(Year_of_Manufacture))
+  
+  mutate(Year_of_Manufacture = as.character(Year_of_Manufacture)) %>%
+  mutate(Driver_Age = ifelse(
+    Driver_Age == 999, NA, Driver_Age
+  )) %>%
+  
+  # Remove unneeded columns --------------------------------------
+  select(
+    -Pedal_col,
+    -X_Vehicle_,
+    -X_Duplicat
+    )
+
+
+# Interactive checks -------------------------------------------------------
+
+hk_vehicles_new_cleaned_labelled %>% glimpse()
+hk_vehicles_new_cleaned_labelled %>% summary()
+hk_vehicles_new_cleaned_labelled %>% skimr::skim()
+
+# Overwrite dataset for hk_vehicles --------------------------------------- 
+
+hk_vehicles <- hk_vehicles_new_cleaned_labelled # overwrite
+usethis::use_data(hk_vehicles, overwrite = TRUE)
 

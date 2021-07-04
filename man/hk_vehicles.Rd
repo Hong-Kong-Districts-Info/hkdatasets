@@ -8,13 +8,19 @@
 A data frame with 153062 rows and 8 variables:
 \describe{
 \item{OBJECTID}{}
-\item{Year}{}
 \item{Serial_No_}{}
+\item{Year}{}
+\item{Vehicle_Class}{}
+\item{Vehicle_Collision}{}
+\item{First_point}{}
+\item{Severity_of_Accident}{}
 \item{Driver_Age}{}
 \item{Driver_Sex}{}
+\item{Main_vehicle}{}
 \item{Year_of_Manufacture}{}
-\item{Severity_of_Accident}{}
-\item{Vehicle_Class}{}
+\item{Grid_E}{}
+\item{Grid_N}{}
+\item{Pedal_cycle}{}
 ...
 }
 }
