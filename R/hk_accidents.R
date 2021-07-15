@@ -4,18 +4,26 @@
 #'
 #' @format A data frame with 95821 rows and 33 variables:
 #' \describe{
-#'   \item{Date_Time}{}
-#'   \item{OBJECTID}{}
-#'   \item{Year}{}
-#'   \item{Serial_No_}{}
-#'   \item{Severity}{}
-#'   \item{District_Council_District}{}
-#'   \item{Hit_and_Run}{}
-#'   \item{Weather}{}
-#'   \item{Rain}{}
-#'   \item{Natural_Light}{}
-#'   \item{Junction_Control}{}
-#'   \item{Vehicle_Movements}{}
+#'   \item{Date_Time}{`dttm` object containing the date and time of the
+#'   incident.}
+#'   \item{OBJECTID}{Numeric. Identifier for the row.}
+#'   \item{Year}{Numeric. Year in which incident has occurred.}
+#'   \item{Serial_No_}{Numeric. Serial number for cross-matching with data
+#'   between `hk_accidents`, `hk_casualties` and `hk_vehicles`.}
+#'   \item{Severity}{String representing the severity of the incident. Values
+#'   include: `Fatal`, `Serious`, `Slight`.
+#'   }
+#'   \item{District_Council_District}{String. Code representing district in
+#'   which the incident has occurred. Join with `hkdistrict_summary` to extract
+#'   full labels. District boundaries are accurate as of 2019.}
+#'   \item{Hit_and_Run}{Logical. Indicates whether the incident is a
+#'   hit-and-run.}
+#'   \item{Weather}{String. Description of weather conditions.}
+#'   \item{Rain}{String. Description of rain conditions.}
+#'   \item{Natural_Light}{String. Description of lighting conditions.}
+#'   \item{Junction_Control}{String. Description of junction condition.}
+#'   \item{Vehicle_Movements}{String. Description of the number of moving
+#'   vehicles.}
 #'   \item{Type_of_Collision}{}
 #'   \item{No_of_Vehicles_Involved}{}
 #'   \item{No_of_Casualties_Injured}{}

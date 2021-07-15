@@ -5,11 +5,12 @@
 \alias{hk_vehicles}
 \title{Dataset of vehicles involved in collisions between 2014 and 2019.}
 \format{
-A data frame with 153062 rows and 8 variables:
+A data frame with 153062 rows and 14 variables:
 \describe{
-\item{OBJECTID}{}
-\item{Serial_No_}{}
-\item{Year}{}
+\item{OBJECTID}{Numeric. Identifier for the row.}
+\item{Serial_No_}{Numeric. Serial number for cross-matching with data
+between \code{hk_accidents}, \code{hk_casualties} and \code{hk_vehicles}.}
+\item{Year}{Numeric. Year in which incident has occurred.}
 \item{Vehicle_Class}{}
 \item{Vehicle_Collision}{}
 \item{First_point}{}
