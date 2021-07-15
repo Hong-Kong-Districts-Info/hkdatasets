@@ -5,29 +5,51 @@
 \alias{hk_accidents}
 \title{Dataset on accidents in Hong Kong between 2014 and 2019.}
 \format{
-A data frame with 95821 rows and 21 variables:
+A data frame with 95821 rows and 33 variables:
 \describe{
-\item{OBJECTID}{}
-\item{Year}{}
-\item{Serial_No_}{}
-\item{Severity}{}
-\item{District_Council_District}{}
-\item{Hit_and_Run}{}
-\item{Weather}{}
-\item{Rain}{}
-\item{Natural_Light}{}
-\item{Junction_Control}{}
-\item{Road_Classification}{}
-\item{Vehicle_Movements}{}
-\item{Type_of_Collision}{}
-\item{No__of_Vehicles_Involved}{}
-\item{No__of_Casualties_Injured}{}
+\item{Date_Time}{\code{dttm} object containing the date and time of the
+incident.}
+\item{OBJECTID}{Numeric. Identifier for the row.}
+\item{Year}{Numeric. Year in which incident has occurred.}
+\item{Serial_No_}{Numeric. Serial number for cross-matching with data
+between \code{hk_accidents}, \code{hk_casualties} and \code{hk_vehicles}.}
+\item{Severity}{String representing the severity of the incident. Values
+include: \code{Fatal}, \code{Serious}, \code{Slight}.
+}
+\item{District_Council_District}{String. Code representing district in
+which the incident has occurred. Join with \code{hkdistrict_summary} to extract
+full labels. District boundaries are accurate as of 2019.}
+\item{Hit_and_Run}{Logical. Indicates whether the incident is a
+hit-and-run.}
+\item{Weather}{String. Description of weather conditions.}
+\item{Rain}{String. Description of rain conditions.}
+\item{Natural_Light}{String. Description of lighting conditions.}
+\item{Junction_Control}{String. Description of junction condition.}
+\item{Vehicle_Movements}{String. Description of the number of moving
+vehicles.}
+\item{Type_of_Collision}{String. Description of type of collision.}
+\item{No_of_Vehicles_Involved}{Numeric. Number of vehicles involved in
+collision.}
+\item{No_of_Casualties_Injured}{Numeric. Number of casualties injured in
+collision.}
 \item{Grid_E}{}
 \item{Grid_N}{}
-\item{Date}{}
-\item{Time}{}
-\item{latitude}{}
-\item{longitude}{}
+\item{latitude}{Numeric. Latitude values.}
+\item{longitude}{Numeric. Longitude values.}
+\item{Overtaking}{}
+\item{Within_70m}{}
+\item{Precise_Location}{}
+\item{Accident}{}
+\item{Junction_Type}{}
+\item{Crossing_Control}{}
+\item{Crossing_Type}{}
+\item{Street_Name}{}
+\item{Road_Type}{}
+\item{Cycle_Type}{}
+\item{Type_of_Collision_with_cycle}{}
+\item{Structure_Type}{}
+\item{Road_Hierarchy}{}
+\item{Road_Ownership}{}
 ...
 }
 }
