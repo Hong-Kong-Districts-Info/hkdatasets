@@ -27,13 +27,15 @@ hit-and-run.}
 \item{Junction_Control}{String. Description of junction condition.}
 \item{Vehicle_Movements}{String. Description of the number of moving
 vehicles.}
-\item{Type_of_Collision}{}
-\item{No_of_Vehicles_Involved}{}
-\item{No_of_Casualties_Injured}{}
+\item{Type_of_Collision}{String. Description of type of collision.}
+\item{No_of_Vehicles_Involved}{Numeric. Number of vehicles involved in
+collision.}
+\item{No_of_Casualties_Injured}{Numeric. Number of casualties injured in
+collision.}
 \item{Grid_E}{}
 \item{Grid_N}{}
-\item{latitude}{}
-\item{longitude}{}
+\item{latitude}{Numeric. Latitude values.}
+\item{longitude}{Numeric. Longitude values.}
 \item{Overtaking}{}
 \item{Within_70m}{}
 \item{Precise_Location}{}
