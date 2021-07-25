@@ -11,17 +11,18 @@ A data frame with 153062 rows and 14 variables:
 \item{Serial_No_}{Numeric. Serial number for cross-matching with data
 between \code{hk_accidents}, \code{hk_casualties} and \code{hk_vehicles}.}
 \item{Year}{Numeric. Year in which incident has occurred.}
-\item{Vehicle_Class}{}
-\item{Vehicle_Collision}{}
-\item{First_point}{}
-\item{Severity_of_Accident}{}
-\item{Driver_Age}{}
-\item{Driver_Sex}{}
-\item{Main_vehicle}{}
-\item{Year_of_Manufacture}{}
-\item{Grid_E}{}
-\item{Grid_N}{}
-\item{Pedal_cycle}{}
+\item{Vehicle_Class}{Character.}
+\item{Vehicle_Collision}{Character.}
+\item{First_point}{Character.}
+\item{Severity_of_Accident}{Character. Indicates the severity of the
+accident. Can be 'Fatal', 'Serious', or 'Slight'.}
+\item{Driver_Age}{Numeric. Indicates the age of the driver.}
+\item{Driver_Sex}{Character. Indicates the sex of the driver.}
+\item{Main_vehicle}{Character.}
+\item{Year_of_Manufacture}{Character.}
+\item{Grid_E}{Double.}
+\item{Grid_N}{Double.}
+\item{Pedal_cycle}{Character.}
 ...
 }
 }
