@@ -32,8 +32,8 @@ vehicles.}
 collision.}
 \item{No_of_Casualties_Injured}{Numeric. Number of casualties injured in
 collision.}
-\item{Grid_E}{}
-\item{Grid_N}{}
+\item{Grid_E}{Numeric. Eastings as per the 1980 Hong Kong Grid System.}
+\item{Grid_N}{Numeric. Northings as per the 1980 Hong Kong Grid System.}
 \item{latitude}{Numeric. Latitude values.}
 \item{longitude}{Numeric. Longitude values.}
 \item{Overtaking}{CURRENTLY UNUSED.}

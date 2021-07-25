@@ -20,8 +20,8 @@ accident. Can be 'Fatal', 'Serious', or 'Slight'.}
 \item{Driver_Sex}{Character. Indicates the sex of the driver.}
 \item{Main_vehicle}{Character.}
 \item{Year_of_Manufacture}{Character.}
-\item{Grid_E}{Double.}
-\item{Grid_N}{Double.}
+\item{Grid_E}{Numeric. Eastings as per the 1980 Hong Kong Grid System.}
+\item{Grid_N}{Numeric. Northings as per the 1980 Hong Kong Grid System.}
 \item{Pedal_cycle}{Character.}
 ...
 }
