@@ -36,20 +36,20 @@ collision.}
 \item{Grid_N}{}
 \item{latitude}{Numeric. Latitude values.}
 \item{longitude}{Numeric. Longitude values.}
-\item{Overtaking}{}
-\item{Within_70m}{}
-\item{Precise_Location}{}
-\item{Accident}{}
-\item{Junction_Type}{}
-\item{Crossing_Control}{}
-\item{Crossing_Type}{}
-\item{Street_Name}{}
-\item{Road_Type}{}
-\item{Cycle_Type}{}
-\item{Type_of_Collision_with_cycle}{}
-\item{Structure_Type}{}
-\item{Road_Hierarchy}{}
-\item{Road_Ownership}{}
+\item{Overtaking}{CURRENTLY UNUSED.}
+\item{Within_70m}{Logical.}
+\item{Precise_Location}{Character. Text description of the precise location.}
+\item{Accident}{Logical. Indicates whether incident was an accident.}
+\item{Junction_Type}{Character.}
+\item{Crossing_Control}{Character.}
+\item{Crossing_Type}{Character.}
+\item{Street_Name}{Character.}
+\item{Road_Type}{Character.}
+\item{Cycle_Type}{Character.}
+\item{Type_of_Collision_with_cycle}{Character.}
+\item{Structure_Type}{Character.}
+\item{Road_Hierarchy}{Character.}
+\item{Road_Ownership}{Character.}
 ...
 }
 }
