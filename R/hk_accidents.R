@@ -33,7 +33,6 @@
 #'   \item{Grid_N}{Numeric. Northings as per the 1980 Hong Kong Grid System.}
 #'   \item{latitude}{Numeric. Latitude values.}
 #'   \item{longitude}{Numeric. Longitude values.}
-#'   \item{Overtaking}{CURRENTLY UNUSED.}
 #'   \item{Within_70m}{Logical.}
 #'   \item{Precise_Location}{Character. Text description of the precise location.}
 #'   \item{Accident}{Logical. Indicates whether incident was an accident.}

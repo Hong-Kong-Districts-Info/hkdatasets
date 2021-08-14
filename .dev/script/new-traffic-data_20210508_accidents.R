@@ -141,7 +141,8 @@ hk_accidents_new_cleaned_labelled <-
     -TypeOfCo_P,
     -Struc_Type,
     -RD_Class_L,
-    -Road_class
+    -Road_class,
+    -Overtaking # not used
   ) %>%
   
   # Rename new variables --------------------------------------------------
