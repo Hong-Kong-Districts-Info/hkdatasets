@@ -1,3 +1,5 @@
+# hkdatasets 0.0.5
+
 ## Version 0.0.4
 New data additions:
 - Added a new dataset `hkstreetnames20`, providing a list of Hong Kong street names as of 2020.
