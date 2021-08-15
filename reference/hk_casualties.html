@@ -83,7 +83,7 @@ and 2019." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hkdatasets</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.5</span>
       </span>
     </div>
 
@@ -137,21 +137,28 @@ and 2019.</p>
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 120110 rows and 10 variables:</p><dl>
-<dt>OBJECTID</dt><dd><p></p></dd>
-<dt>Year</dt><dd><p></p></dd>
-<dt>Serial_No_</dt><dd><p></p></dd>
-<dt>Casualty_Age</dt><dd><p></p></dd>
-<dt>Casualty_Sex</dt><dd><p></p></dd>
-<dt>Degree_of_Injury</dt><dd><p></p></dd>
-<dt>Role_of_Casualty</dt><dd><p></p></dd>
-<dt>Location_of_Injury_Head</dt><dd><p></p></dd>
-<dt>Location_of_Injury_Upper_trunk</dt><dd><p></p></dd>
-<dt>Location_of_Injury_Lower_trunk</dt><dd><p></p></dd>
-<dt>Location_of_Injury_Arms</dt><dd><p></p></dd>
-<dt>Location_of_Injury_Legs</dt><dd><p></p></dd>
-<dt>Pedestrian_Action</dt><dd><p></p></dd>
-<dt>Vehicle_Class_of_Driver_or_Pass</dt><dd><p></p></dd>
+    <p>A data frame with 120110 rows and 20 variables:</p><dl>
+<dt>OBJECTID</dt><dd><p>Numeric. Identifier for the row.</p></dd>
+<dt>Year</dt><dd><p>Numeric. Year in which incident has occurred.</p></dd>
+<dt>Serial_No_</dt><dd><p>Numeric. Serial number for cross-matching with data
+between <code>hk_accidents</code>, <code>hk_casualties</code> and <code>hk_vehicles</code>.</p></dd>
+<dt>Casualty_Age</dt><dd><p>Numeric.</p></dd>
+<dt>Casualty_Sex</dt><dd><p>Character.</p></dd>
+<dt>Degree_of_Injury</dt><dd><p>Character.</p></dd>
+<dt>Role_of_Casualty</dt><dd><p>Character.</p></dd>
+<dt>Location_of_Injury_Head</dt><dd><p>Logical.</p></dd>
+<dt>Location_of_Injury_Upper_trunk</dt><dd><p>Logical.</p></dd>
+<dt>Location_of_Injury_Lower_trunk</dt><dd><p>Logical.</p></dd>
+<dt>Location_of_Injury_Arms</dt><dd><p>Logical.</p></dd>
+<dt>Location_of_Injury_Legs</dt><dd><p>Logical.</p></dd>
+<dt>Pedestrian_Action</dt><dd><p>Character.</p></dd>
+<dt>Vehicle_Class_of_Driver_or_Pass</dt><dd><p>Character.</p></dd>
+<dt>Ped_Action</dt><dd><p>Character.</p></dd>
+<dt>Ped_Location</dt><dd><p>Character.</p></dd>
+<dt>Ped_Circumstances</dt><dd><p>Character.</p></dd>
+<dt>Grid_E</dt><dd><p>Numeric. Eastings as per the 1980 Hong Kong Grid System.</p></dd>
+<dt>Grid_N</dt><dd><p>Numeric. Northings as per the 1980 Hong Kong Grid System.</p></dd>
+<dt>Pedal_cycle</dt><dd><p>Character.</p></dd>
 ...
 
 </dl>

@@ -83,7 +83,7 @@ and 2019." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hkdatasets</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.5</span>
       </span>
     </div>
 
@@ -137,15 +137,23 @@ and 2019.</p>
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 153062 rows and 8 variables:</p><dl>
-<dt>OBJECTID</dt><dd><p></p></dd>
-<dt>Year</dt><dd><p></p></dd>
-<dt>Serial_No_</dt><dd><p></p></dd>
-<dt>Driver_Age</dt><dd><p></p></dd>
-<dt>Driver_Sex</dt><dd><p></p></dd>
-<dt>Year_of_Manufacture</dt><dd><p></p></dd>
-<dt>Severity_of_Accident</dt><dd><p></p></dd>
-<dt>Vehicle_Class</dt><dd><p></p></dd>
+    <p>A data frame with 153062 rows and 14 variables:</p><dl>
+<dt>OBJECTID</dt><dd><p>Numeric. Identifier for the row.</p></dd>
+<dt>Serial_No_</dt><dd><p>Numeric. Serial number for cross-matching with data
+between <code>hk_accidents</code>, <code>hk_casualties</code> and <code>hk_vehicles</code>.</p></dd>
+<dt>Year</dt><dd><p>Numeric. Year in which incident has occurred.</p></dd>
+<dt>Vehicle_Class</dt><dd><p>Character.</p></dd>
+<dt>Vehicle_Collision</dt><dd><p>Character.</p></dd>
+<dt>First_point</dt><dd><p>Character.</p></dd>
+<dt>Severity_of_Accident</dt><dd><p>Character. Indicates the severity of the
+accident. Can be 'Fatal', 'Serious', or 'Slight'.</p></dd>
+<dt>Driver_Age</dt><dd><p>Numeric. Indicates the age of the driver.</p></dd>
+<dt>Driver_Sex</dt><dd><p>Character. Indicates the sex of the driver.</p></dd>
+<dt>Main_vehicle</dt><dd><p>Character.</p></dd>
+<dt>Year_of_Manufacture</dt><dd><p>Character.</p></dd>
+<dt>Grid_E</dt><dd><p>Numeric. Eastings as per the 1980 Hong Kong Grid System.</p></dd>
+<dt>Grid_N</dt><dd><p>Numeric. Northings as per the 1980 Hong Kong Grid System.</p></dd>
+<dt>Pedal_cycle</dt><dd><p>Character.</p></dd>
 ...
 
 </dl>

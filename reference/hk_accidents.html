@@ -82,7 +82,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hkdatasets</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.5</span>
       </span>
     </div>
 
@@ -135,28 +135,48 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 95821 rows and 21 variables:</p><dl>
-<dt>OBJECTID</dt><dd><p></p></dd>
-<dt>Year</dt><dd><p></p></dd>
-<dt>Serial_No_</dt><dd><p></p></dd>
-<dt>Severity</dt><dd><p></p></dd>
-<dt>District_Council_District</dt><dd><p></p></dd>
-<dt>Hit_and_Run</dt><dd><p></p></dd>
-<dt>Weather</dt><dd><p></p></dd>
-<dt>Rain</dt><dd><p></p></dd>
-<dt>Natural_Light</dt><dd><p></p></dd>
-<dt>Junction_Control</dt><dd><p></p></dd>
-<dt>Road_Classification</dt><dd><p></p></dd>
-<dt>Vehicle_Movements</dt><dd><p></p></dd>
-<dt>Type_of_Collision</dt><dd><p></p></dd>
-<dt>No__of_Vehicles_Involved</dt><dd><p></p></dd>
-<dt>No__of_Casualties_Injured</dt><dd><p></p></dd>
-<dt>Grid_E</dt><dd><p></p></dd>
-<dt>Grid_N</dt><dd><p></p></dd>
-<dt>Date</dt><dd><p></p></dd>
-<dt>Time</dt><dd><p></p></dd>
-<dt>latitude</dt><dd><p></p></dd>
-<dt>longitude</dt><dd><p></p></dd>
+    <p>A data frame with 95821 rows and 33 variables:</p><dl>
+<dt>Date_Time</dt><dd><p><code>dttm</code> object containing the date and time of the
+incident.</p></dd>
+<dt>OBJECTID</dt><dd><p>Numeric. Identifier for the row.</p></dd>
+<dt>Year</dt><dd><p>Numeric. Year in which incident has occurred.</p></dd>
+<dt>Serial_No_</dt><dd><p>Numeric. Serial number for cross-matching with data
+between <code>hk_accidents</code>, <code>hk_casualties</code> and <code>hk_vehicles</code>.</p></dd>
+<dt>Severity</dt><dd><p>String representing the severity of the incident. Values
+include: <code>Fatal</code>, <code>Serious</code>, <code>Slight</code>.</p></dd>
+<dt>District_Council_District</dt><dd><p>String. Code representing district in
+which the incident has occurred. Join with <code>hkdistrict_summary</code> to extract
+full labels. District boundaries are accurate as of 2019.</p></dd>
+<dt>Hit_and_Run</dt><dd><p>Logical. Indicates whether the incident is a
+hit-and-run.</p></dd>
+<dt>Weather</dt><dd><p>String. Description of weather conditions.</p></dd>
+<dt>Rain</dt><dd><p>String. Description of rain conditions.</p></dd>
+<dt>Natural_Light</dt><dd><p>String. Description of lighting conditions.</p></dd>
+<dt>Junction_Control</dt><dd><p>String. Description of junction condition.</p></dd>
+<dt>Vehicle_Movements</dt><dd><p>String. Description of the number of moving
+vehicles.</p></dd>
+<dt>Type_of_Collision</dt><dd><p>String. Description of type of collision.</p></dd>
+<dt>No_of_Vehicles_Involved</dt><dd><p>Numeric. Number of vehicles involved in
+collision.</p></dd>
+<dt>No_of_Casualties_Injured</dt><dd><p>Numeric. Number of casualties injured in
+collision.</p></dd>
+<dt>Grid_E</dt><dd><p>Numeric. Eastings as per the 1980 Hong Kong Grid System.</p></dd>
+<dt>Grid_N</dt><dd><p>Numeric. Northings as per the 1980 Hong Kong Grid System.</p></dd>
+<dt>latitude</dt><dd><p>Numeric. Latitude values.</p></dd>
+<dt>longitude</dt><dd><p>Numeric. Longitude values.</p></dd>
+<dt>Within_70m</dt><dd><p>Logical.</p></dd>
+<dt>Precise_Location</dt><dd><p>Character. Text description of the precise location.</p></dd>
+<dt>Accident</dt><dd><p>Logical. Indicates whether incident was an accident.</p></dd>
+<dt>Junction_Type</dt><dd><p>Character.</p></dd>
+<dt>Crossing_Control</dt><dd><p>Character.</p></dd>
+<dt>Crossing_Type</dt><dd><p>Character.</p></dd>
+<dt>Street_Name</dt><dd><p>Character.</p></dd>
+<dt>Road_Type</dt><dd><p>Character.</p></dd>
+<dt>Cycle_Type</dt><dd><p>Character.</p></dd>
+<dt>Type_of_Collision_with_cycle</dt><dd><p>Character.</p></dd>
+<dt>Structure_Type</dt><dd><p>Character.</p></dd>
+<dt>Road_Hierarchy</dt><dd><p>Character.</p></dd>
+<dt>Road_Ownership</dt><dd><p>Character.</p></dd>
 ...
 
 </dl>
