@@ -17,7 +17,7 @@ This package contains datasets on Hong Kong. This package is developed as part o
 - `hk_casualties` - A dataset containing information of collisions by casualties between 2014 and 2019.
 - `hk_vehicles` - A dataset containing information of vehicles by casualties between 2014 and 2019.
 
-![](https://raw.githubusercontent.com/Hong-Kong-Districts-Info/hkdatasets/master/inst/collision-data-diagram-2.png)
+![](https://raw.githubusercontent.com/Hong-Kong-Districts-Info/hkdatasets/master/inst/collision-data-diagram-3.png)
 
 The datasets `hk_accidents`, `hk_collisions`, and `hk_vehicles` are related and can be joined together using the variable `Serial_No_`. This dataset was made available via a Freedom of Information request to the [Hong Kong Transport Department](https://www.td.gov.hk/). We would also like to thank the authors behind the [{HK80}](https://CRAN.R-project.org/package=HK80) package to enable us to convert the **HK1980GRID** coordinate system to longitudes and latitudes in the `hk_accidents` dataset. 
 
