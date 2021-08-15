@@ -5,22 +5,29 @@
 \alias{hk_casualties}
 \title{Dataset of casualties involved in collisions between 2014 and 2019.}
 \format{
-A data frame with 120110 rows and 10 variables:
+A data frame with 120110 rows and 20 variables:
 \describe{
-\item{OBJECTID}{}
-\item{Year}{}
-\item{Serial_No_}{}
-\item{Casualty_Age}{}
-\item{Casualty_Sex}{}
-\item{Degree_of_Injury}{}
-\item{Role_of_Casualty}{}
-\item{Location_of_Injury_Head}{}
-\item{Location_of_Injury_Upper_trunk}{}
-\item{Location_of_Injury_Lower_trunk}{}
-\item{Location_of_Injury_Arms}{}
-\item{Location_of_Injury_Legs}{}
-\item{Pedestrian_Action}{}
-\item{Vehicle_Class_of_Driver_or_Pass}{}
+\item{OBJECTID}{Numeric. Identifier for the row.}
+\item{Year}{Numeric. Year in which incident has occurred.}
+\item{Serial_No_}{Numeric. Serial number for cross-matching with data
+between \code{hk_accidents}, \code{hk_casualties} and \code{hk_vehicles}.}
+\item{Casualty_Age}{Numeric.}
+\item{Casualty_Sex}{Character.}
+\item{Degree_of_Injury}{Character.}
+\item{Role_of_Casualty}{Character.}
+\item{Location_of_Injury_Head}{Logical.}
+\item{Location_of_Injury_Upper_trunk}{Logical.}
+\item{Location_of_Injury_Lower_trunk}{Logical.}
+\item{Location_of_Injury_Arms}{Logical.}
+\item{Location_of_Injury_Legs}{Logical.}
+\item{Pedestrian_Action}{Character.}
+\item{Vehicle_Class_of_Driver_or_Pass}{Character.}
+\item{Ped_Action}{Character.}
+\item{Ped_Location}{Character.}
+\item{Ped_Circumstances}{Character.}
+\item{Grid_E}{Numeric. Eastings as per the 1980 Hong Kong Grid System.}
+\item{Grid_N}{Numeric. Northings as per the 1980 Hong Kong Grid System.}
+\item{Pedal_cycle}{Character.}
 ...
 }
 }
