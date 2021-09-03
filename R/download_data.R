@@ -16,11 +16,13 @@
 #' 
 #' @return A data frame is returned. 
 #' 
-#' @section Example:
-#' You can download and return a dataset with the following code:
-#' ```
+#' @examples 
+#' \donttest{
+#' # You can download and return a dataset with the following code:
 #' download_data(dataset = "hk_vehicles")
-#' ```
+#' }
+#' 
+#' 
 #' 
 #' @export   
 download_data <- function(dataset = NULL){

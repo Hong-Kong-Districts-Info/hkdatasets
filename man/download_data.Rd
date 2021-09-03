@@ -24,9 +24,12 @@ the name of the dataset.
 This supersedes the method for pulling \code{hk_accidents} due to the
 size of the data file.
 }
-\section{Example}{
-
-You can download and return a dataset with the following code:\preformatted{download_data(dataset = "hk_vehicles")
+\examples{
+\donttest{
+# You can download and return a dataset with the following code:
+download_data(dataset = "hk_vehicles")
 }
-}
 
+
+
+}
