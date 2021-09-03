@@ -14,6 +14,8 @@
 #'     
 #' @importFrom fst read_fst
 #' 
+#' @return A data frame is returned. 
+#' 
 #' @section Example:
 #' You can download and return a dataset with the following code:
 #' ```
