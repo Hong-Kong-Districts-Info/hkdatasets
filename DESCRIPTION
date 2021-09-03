@@ -19,8 +19,9 @@ BugReports: https://github.com/Hong-Kong-Districts-Info/hkdatasets/issues
 Maintainer: Martin Chan <martinchan53@gmail.com>
 Depends: 
     R (>= 3.5.0)
+Imports:
+    fst
 Suggests: 
     dplyr,
     tidyr,
-    here,
-    showtext
+    here
