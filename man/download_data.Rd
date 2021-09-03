@@ -13,6 +13,9 @@ include:
 - \code{"hk_casualties"}
 - \code{"hk_vehicles"}}
 }
+\value{
+A data frame is returned.
+}
 \description{
 Download and extract data from preset online sources, specifying
 the name of the dataset.

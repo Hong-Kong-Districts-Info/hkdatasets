@@ -20,6 +20,7 @@ Maintainer: Martin Chan <martinchan53@gmail.com>
 Depends: 
     R (>= 3.5.0)
 Imports:
+    utils, 
     fst
 Suggests: 
     dplyr,

@@ -47,7 +47,7 @@ download_data <- function(dataset = NULL){
   tf <- tempfile(tmpdir = td, fileext = ".fst")
   
   # download into the placeholder file
-  download.file(
+  utils::download.file(
     url = pull_url,
     destfile = tf,
     quiet = TRUE,
