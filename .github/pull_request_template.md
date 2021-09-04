@@ -3,15 +3,14 @@ This branch *<succinct summary of the purpose>*.
 
 # Changes
 The changes made in this PR are:
-1. Change 1
-1. Change 2
+1. ...
 
 ***
 
 # Check
-- [ ] Check 1
-- [ ] Check 2
-- [ ] The travis.ci and R CMD checks pass.
+- [ ] All R CMD checks pass 
+- [ ] `roxygen2::roxygenise()` has been run prior to merging to ensure that `.Rd` and `NAMESPACE` files are up to date.
+- [ ] `NEWS.md` has been updated.
 
 ***
 

@@ -183,3 +183,10 @@ hk_vehicles_new_cleaned_labelled %>% skimr::skim()
 hk_vehicles <- hk_vehicles_new_cleaned_labelled # overwrite
 usethis::use_data(hk_vehicles, overwrite = TRUE)
 
+hk_vehicles %>%
+  fst::write_fst(
+    here::here(
+      "data-ready",
+      "hk_vehicles.fst"
+    )
+  )

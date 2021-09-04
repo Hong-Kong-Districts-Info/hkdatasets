@@ -235,6 +235,23 @@ hk_accidents <- hk_accidents_new_cleaned_labelled # overwrite
 
 usethis::use_data(
   hk_accidents,
-  internal = TRUE, # Lazy loading
+  # internal = TRUE, # Lazy loading
+  internal = FALSE,
   overwrite = TRUE
+  )
+
+hk_accidents %>%
+  write_csv(
+    here::here(
+      "data-ready",
+      "hk_accidents.csv"
+    )
+  )
+
+hk_accidents %>%
+  fst::write_fst(
+    here::here(
+      "data-ready",
+      "hk_accidents.fst"
+    )
   )

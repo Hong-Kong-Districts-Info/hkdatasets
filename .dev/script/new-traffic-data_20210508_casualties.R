@@ -140,6 +140,10 @@ hk_casualties_new2 <-
 ## join two datasets  
 hk_casualties_new_cleaned_unlabelled <-
   hk_casualties %>%
+  select(
+    -Grid_E,
+    -Grid_N
+    ) %>%
   left_join(
     hk_casualties_new2,
     by = "OBJECTID"
@@ -164,7 +168,13 @@ hk_casualties_new_cleaned_labelled <-
     -Degree_of_, # Degree of Injury
     -Location_o, # Location of Injury - already split out
     -Role_of_Ca, # Role of Casualty
-    -Vehicle_Cl # Vehicle Class of Driver or Passenger
+    -Vehicle_Cl, # Vehicle Class of Driver or Passenger
+    
+    
+    -Ped_Action,
+    -Ped_Location,
+    -Ped_Circumstances,
+    -Pedal_cycle
   ) %>%
   
   # To logical -----------------------------------------------------------
@@ -228,4 +238,13 @@ glimpse(hk_casualties_new_cleaned_labelled)
 skimr::skim(hk_casualties_new_cleaned_labelled)
 
 hk_casualties <- hk_casualties_new_cleaned_labelled # overwrite
+
 usethis::use_data(hk_casualties, overwrite = TRUE)
+
+hk_casualties %>%
+  fst::write_fst(
+    here::here(
+      "data-ready",
+      "hk_casualties.fst"
+    )
+  )
