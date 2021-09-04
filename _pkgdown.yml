@@ -2,3 +2,33 @@ template:
   params:
     bootswatch: cosmo
     ganalytics: UA-173737339-2
+
+navbar:
+  structure:
+    left:
+    - home
+    - reference
+    - dictionary
+    right: github
+
+  components:
+    home:
+      icon: fas fa-home fa-lg
+      href: index.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    dictionary:
+      text: Data Dictionary
+      menu:
+      - text: hk_accidents
+        href: documentation/hk_accidents.html
+      - text: hk_casualties
+        href: documentation/hk_casualties.html
+      - text: hk_vehicles
+        href: documentation/hk_vehicles.html
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/hong-kong-districts-info/hkdatasets/
+      
+      
