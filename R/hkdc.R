@@ -36,8 +36,8 @@
 #'   \item{VotePercentage}{Share of vote}
 #'   \item{Gender_ZH}{Gender of the DC in Chinese}
 #'   \item{Gender_EN}{Gender of the DC in English}
-#'   \item{Tag_ZH}{Granualar political leaning/camp of the DC when elected in Chinese}
-#'   \item{Tag_EN}{Granualar political leaning/camp of the DC when elected in English}
+#'   \item{Tag_ZH}{Granular political leaning/camp of the DC when elected in Chinese}
+#'   \item{Tag_EN}{Granular political leaning/camp of the DC when elected in English}
 #'   ...
 #' }
 #' @source \url{https://www.districtcouncils.gov.hk}

@@ -21,8 +21,10 @@ Download and extract data from preset online sources, specifying
 the name of the dataset.
 }
 \details{
-This supersedes the method for pulling \code{hk_accidents} due to the
-size of the data file.
+This supersedes the method for pulling \code{hk_accidents},
+\code{hk_casualties}, and \code{hk_vehicles} due to the size of the data file. Refer
+to \url{https://hong-kong-districts-info.github.io/hkdatasets/} to access the
+data documentation for three datsets.
 }
 \examples{
 \donttest{
