@@ -1,6 +1,6 @@
 # hkdatasets 1.0.0
 
-- Major breaking changes including the move to making `hk_accidents` only available via the new `download_data()` function
+- Major breaking changes including the move to making `hk_accidents` only available via the new `download_data()` function (#16)
 - Updated `hk_accidents`, `hk_vehicles`, and `hk_casualties` with new columns on cyclist collision data (see #13 for details)
 
 # hkdatasets 0.0.4
