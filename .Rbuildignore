@@ -10,3 +10,4 @@
 ^\.github$
 ^data-raw$
 ^data-ready$
+^cran-comments\.md$
