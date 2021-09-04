@@ -81,7 +81,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">hkdatasets</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -96,13 +96,31 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Data Dictionary
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="documentation/hk_accidents.html">hk_accidents</a>
+    </li>
+    <li>
+      <a href="documentation/hk_casualties.html">hk_casualties</a>
+    </li>
+    <li>
+      <a href="documentation/hk_vehicles.html">hk_vehicles</a>
+    </li>
+  </ul>
+</li>
 <li>
   <a href="news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/Hong-Kong-Districts-Info/hkdatasets/">
+  <a href="https://github.com/hong-kong-districts-info/hkdatasets/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -133,8 +151,7 @@
 <a href="#changes" class="anchor"></a>Changes</h1>
 <p>The changes made in this PR are:</p>
 <ol>
-<li>Change 1</li>
-<li>Change 2</li>
+<li>…</li>
 </ol>
 <hr>
 </div>
@@ -144,13 +161,11 @@
 <ul>
 <li>
 <input type="checkbox" disabled>
-Check 1</li>
+All R CMD checks pass</li>
 <li>
-<input type="checkbox" disabled>
-Check 2</li>
+<input type="checkbox" disabled><code>roxygen2::roxygenise()</code> has been run prior to merging to ensure that <code>.Rd</code> and <code>NAMESPACE</code> files are up to date.</li>
 <li>
-<input type="checkbox" disabled>
-The travis.ci and R CMD checks pass.</li>
+<input type="checkbox" disabled><code>NEWS.md</code> has been updated.</li>
 </ul>
 <hr>
 <div id="optional-note" class="section level2">

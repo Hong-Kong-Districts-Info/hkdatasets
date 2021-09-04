@@ -81,7 +81,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hkdatasets</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -96,13 +96,31 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Data Dictionary
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../documentation/hk_accidents.html">hk_accidents</a>
+    </li>
+    <li>
+      <a href="../documentation/hk_casualties.html">hk_casualties</a>
+    </li>
+    <li>
+      <a href="../documentation/hk_vehicles.html">hk_vehicles</a>
+    </li>
+  </ul>
+</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/Hong-Kong-Districts-Info/hkdatasets/">
+  <a href="https://github.com/hong-kong-districts-info/hkdatasets/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -124,20 +142,19 @@
       <small>Source: <a href='https://github.com/Hong-Kong-Districts-Info/hkdatasets/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="hkdatasets-005" class="section level1">
-<h1 class="page-header" data-toc-text="0.0.5">
-<a href="#hkdatasets-005" class="anchor"></a>hkdatasets 0.0.5<small> Unreleased </small>
+    <div id="hkdatasets-100" class="section level1">
+<h1 class="page-header" data-toc-text="1.0.0">
+<a href="#hkdatasets-100" class="anchor"></a>hkdatasets 1.0.0<small> Unreleased </small>
 </h1>
-<div id="version-005" class="section level2">
-<h2 class="hasAnchor">
-<a href="#version-005" class="anchor"></a>Version 0.0.5</h2>
 <ul>
+<li>Major breaking changes including the move to making <code>hk_accidents</code> only available via the new <code><a href="../reference/download_data.html">download_data()</a></code> function</li>
 <li>Updated <code>hk_accidents</code>, <code>hk_vehicles</code>, and <code>hk_casualties</code> with new columns on cyclist collision data (see <a href='https://github.com/Hong-Kong-Districts-Info/hkdatasets/issues/13'>#13</a> for details)</li>
 </ul>
 </div>
-<div id="version-004" class="section level2">
-<h2 class="hasAnchor">
-<a href="#version-004" class="anchor"></a>Version 0.0.4</h2>
+    <div id="hkdatasets-004" class="section level1">
+<h1 class="page-header" data-toc-text="0.0.4">
+<a href="#hkdatasets-004" class="anchor"></a>hkdatasets 0.0.4<small> Unreleased </small>
+</h1>
 <p>New data additions:</p>
 <ul>
 <li>Added a new dataset <code>hkstreetnames20</code>, providing a list of Hong Kong street names as of 2020.</li>
@@ -146,9 +163,10 @@
 <li>Fixed some broken Facebook links in <code>hkdc</code>, with special thanks to <a href='https://github.com/elgarteo'>@elgarteo</a>.</li>
 </ul>
 </div>
-<div id="version-003" class="section level2">
-<h2 class="hasAnchor">
-<a href="#version-003" class="anchor"></a>Version 0.0.3</h2>
+    <div id="hkdatasets-003" class="section level1">
+<h1 class="page-header" data-toc-text="0.0.3">
+<a href="#hkdatasets-003" class="anchor"></a>hkdatasets 0.0.3<small> 2020-10-17 </small>
+</h1>
 <p>First release on CRAN</p>
 <ul>
 <li><code>hkdc</code></li>
@@ -156,7 +174,6 @@
 <li><code>hk_collisions</code></li>
 <li><code>hk_vehicles</code></li>
 </ul>
-</div>
 </div>
   </div>
 

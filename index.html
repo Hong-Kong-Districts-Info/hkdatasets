@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">hkdatasets</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -53,13 +53,31 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Data Dictionary
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="documentation/hk_accidents.html">hk_accidents</a>
+    </li>
+    <li>
+      <a href="documentation/hk_casualties.html">hk_casualties</a>
+    </li>
+    <li>
+      <a href="documentation/hk_vehicles.html">hk_vehicles</a>
+    </li>
+  </ul>
+</li>
 <li>
   <a href="news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/Hong-Kong-Districts-Info/hkdatasets/">
+  <a href="https://github.com/hong-kong-districts-info/hkdatasets/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -94,14 +112,15 @@
 <li>
 <code>hkdistrict_summary</code> - A summary table detailing Hong Kong’s districts, their region classifications, and abbreviated labels.</li>
 <li>
-<code>hk_accidents</code> - A dataset containing traffic accidents between 2014 and 2019.</li>
+<code>hk_accidents</code>* - A dataset containing traffic accidents between 2014 and 2019.</li>
 <li>
-<code>hk_casualties</code> - A dataset containing information of collisions by casualties between 2014 and 2019.</li>
+<code>hk_casualties</code>* - A dataset containing information of collisions by casualties between 2014 and 2019.</li>
 <li>
-<code>hk_vehicles</code> - A dataset containing information of vehicles by casualties between 2014 and 2019.</li>
+<code>hk_vehicles</code>* - A dataset containing information of vehicles by casualties between 2014 and 2019.</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/Hong-Kong-Districts-Info/hkdatasets/master/inst/collision-data-diagram-3.png"></p>
 <p>The datasets <code>hk_accidents</code>, <code>hk_collisions</code>, and <code>hk_vehicles</code> are related and can be joined together using the variable <code>Serial_No_</code>. This dataset was made available via a Freedom of Information request to the <a href="https://www.td.gov.hk/">Hong Kong Transport Department</a>. We would also like to thank the authors behind the <a href="https://CRAN.R-project.org/package=HK80">{HK80}</a> package to enable us to convert the <strong>HK1980GRID</strong> coordinate system to longitudes and latitudes in the <code>hk_accidents</code> dataset.</p>
+<p>*Note that version <code>1.0.0</code> introduced major breaking changes, which moved <code>hk_accidents</code>, <code>hk_casualties</code>, and <code>hk_vehicles</code> to being only available via <code><a href="reference/download_data.html">download_data()</a></code> and will not be available directly as a namespace due to CRAN size limitations. See <a href="https://hong-kong-districts-info.github.io/hkdatasets/news/index.html">NEWS.md</a> for more information.</p>
 <p><a href="https://github.com/Hong-Kong-Districts-Info/hkdatasets">Visit our GitHub</a></p>
 </div>
 <div id="-installation" class="section level3">
