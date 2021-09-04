@@ -3,6 +3,9 @@
 
 
 [![R build status](https://github.com/Hong-Kong-Districts-Info/hkdatasets/workflows/R-CMD-check/badge.svg)](https://github.com/Hong-Kong-Districts-Info/hkdatasets/actions) [![CodeFactor](https://www.codefactor.io/repository/github/hong-kong-districts-info/hkdatasets/badge)](https://www.codefactor.io/repository/github/hong-kong-districts-info/hkdatasets)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT/)
+  [![CRAN status](https://www.r-pkg.org/badges/version/hkdatasets)](https://CRAN.R-project.org/package=hkdatasets/)
+  [![CRAN last month downloads](https://cranlogs.r-pkg.org/badges/last-month/hkdatasets?color=green/)](https://cran.r-project.org/package=hkdatasets/)
 
 <img src="https://raw.githubusercontent.com/Hong-Kong-Districts-Info/hkdatasets/master/inst/logo.png" align="right" height = 150 width = 150/>
 
