@@ -1,6 +1,6 @@
 Package: hkdatasets
 Title: Datasets Related to Hong Kong
-Version: 0.0.5
+Version: 1.0.0
 Authors@R: 
     c(person(given = "Martin", family = "Chan", role = c("aut", "cre"), email = "martinchan53@gmail.com"),
       person(given = "Avision", family = "Ho", role = c("ctb"), email = "hkdistricts.info@gmail.com"),
