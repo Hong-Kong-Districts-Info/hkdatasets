@@ -22,11 +22,11 @@ navbar:
       text: Data Dictionary
       menu:
       - text: hk_accidents
-        href: documentation/hk_accidents.html
+        href: hk_accidents.html
       - text: hk_casualties
-        href: documentation/hk_casualties.html
+        href: hk_casualties.html
       - text: hk_vehicles
-        href: documentation/hk_vehicles.html
+        href: hk_vehicles.html
     github:
       icon: fab fa-github fa-lg
       href: https://github.com/hong-kong-districts-info/hkdatasets/
