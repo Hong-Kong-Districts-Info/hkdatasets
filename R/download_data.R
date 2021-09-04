@@ -23,13 +23,24 @@
 #' }
 #' 
 #' 
-#' 
 #' @export   
 download_data <- function(dataset = NULL){
+  
+  # Check for valid `dataset` values
+  valid_ds <-
+    c(
+      "hk_vehicles",
+      "hk_accidents",
+      "hk_casualties"
+    )
   
   if(is.null(dataset)){
     
     stop("please provide the name of the dataset to pull.")
+    
+  } else if(!(dataset %in% valid_ds)){
+    
+    stop("please provide a valid dataset name.")
     
   }
   
