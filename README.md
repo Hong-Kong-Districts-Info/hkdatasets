@@ -13,15 +13,15 @@ This package contains datasets on Hong Kong. This package is developed as part o
 - `hkdc` - A dataset containing information about Hong Kong District Councillors (elected 2019), with variables such as their constituency, region, share of vote, total votes, link to their Facebook pages, etc. (Sources: https://www.districtcouncils.gov.hk; https://dce2019.hk01.com/)
 - `hkstreetnames20` - A dataset containing names of all the streets in Hong Kong as at 2020.
 - `hkdistrict_summary` - A summary table detailing Hong Kong's districts, their region classifications, and abbreviated labels.
-- `hk_accidents` - A dataset containing traffic accidents between 2014 and 2019.
-- `hk_casualties` - A dataset containing information of collisions by casualties between 2014 and 2019.
-- `hk_vehicles` - A dataset containing information of vehicles by casualties between 2014 and 2019.
+- `hk_accidents`* - A dataset containing traffic accidents between 2014 and 2019.
+- `hk_casualties`* - A dataset containing information of collisions by casualties between 2014 and 2019.
+- `hk_vehicles`* - A dataset containing information of vehicles by casualties between 2014 and 2019.
 
 ![](https://raw.githubusercontent.com/Hong-Kong-Districts-Info/hkdatasets/master/inst/collision-data-diagram-3.png)
 
 The datasets `hk_accidents`, `hk_collisions`, and `hk_vehicles` are related and can be joined together using the variable `Serial_No_`. This dataset was made available via a Freedom of Information request to the [Hong Kong Transport Department](https://www.td.gov.hk/). We would also like to thank the authors behind the [{HK80}](https://CRAN.R-project.org/package=HK80) package to enable us to convert the **HK1980GRID** coordinate system to longitudes and latitudes in the `hk_accidents` dataset. 
 
-Note that version `1.0.0` introduced major breaking changes, which moved `hk_accidents` to being only available via `download_data()` and will not be available directly as a namespace due to CRAN size limitations. See [NEWS.md](https://hong-kong-districts-info.github.io/hkdatasets/news/index.html) for more information. 
+*Note that version `1.0.0` introduced major breaking changes, which moved `hk_accidents`, `hk_casualties`, and `hk_vehicles` to being only available via `download_data()` and will not be available directly as a namespace due to CRAN size limitations. See [NEWS.md](https://hong-kong-districts-info.github.io/hkdatasets/news/index.html) for more information. 
 
 [Visit our GitHub](https://github.com/Hong-Kong-Districts-Info/hkdatasets)
 

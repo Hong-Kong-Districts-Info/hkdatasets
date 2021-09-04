@@ -3,8 +3,10 @@
 #' @description Download and extract data from preset online sources, specifying
 #' the name of the dataset. 
 #' 
-#' @details This supersedes the method for pulling `hk_accidents` due to the
-#'   size of the data file.
+#' @details This supersedes the method for pulling `hk_accidents`,
+#'   `hk_casualties`, and `hk_vehicles` due to the size of the data file. Refer
+#'   to <https://hong-kong-districts-info.github.io/hkdatasets/> to access the
+#'   data documentation for three datsets.
 #'
 #' @param dataset String containing the name of the dataset. Valid values
 #'   include:
