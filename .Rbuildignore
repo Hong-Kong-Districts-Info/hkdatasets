@@ -11,3 +11,4 @@
 ^data-raw$
 ^data-ready$
 ^cran-comments\.md$
+^CRAN-RELEASE$
